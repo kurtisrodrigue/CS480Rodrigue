@@ -25,7 +25,8 @@ class Object
     float angle;
     float orbit_angle;
     float orbit_radius;
-    float direction;
+    bool orbit_direction;
+    bool spin_direction;
 };
 
 #endif /* OBJECT_H */

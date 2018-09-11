@@ -63,7 +63,6 @@ Object::Object()
   angle = 0.0f;
   orbit_angle = 0.0f;
   orbit_radius = 10;
-  direction = 1;
 
   glGenBuffers(1, &VB);
   glBindBuffer(GL_ARRAY_BUFFER, VB);
@@ -81,20 +80,36 @@ Object::~Object()
 }
 
 void Object::Update(unsigned int dt)
-{
-    angle += direction * (dt * M_PI/1000);
-    orbit_angle +=  ( dt * M_PI/2000);
+{\
+    if(orbit_direction)
+    {
+        orbit_angle += dt * M_PI/1000;
+    }
+    else
+    {
+        orbit_angle -= dt * M_PI/1000;
+    }
+    if(spin_direction)
+    {
+        angle +=  dt * M_PI/10;
+    }
+    else
+    {
+        angle -=  dt * M_PI/10;
+    }
 
-    std::cout << "direction: " << direction << std::endl;
-    std::cout << "angle: " << angle << std::endl;
+    model = glm::translate(glm::mat4(1.0f), glm::vec3(orbit_radius * cos(orbit_angle),0,orbit_radius * sin(orbit_angle)));
+    model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0, 1.0, 0.0));
 
-    model = glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 1.0, 0.0));
-
-    model = glm::translate(model, glm::vec3(orbit_radius * cos(orbit_angle),0,orbit_radius * sin(orbit_angle)));
+   //model = glm::translate(model, glm::vec3(orbit_radius * cos(orbit_angle),0,orbit_radius * sin(orbit_angle)));
 
     if(orbit_angle > 360)
     {
         orbit_angle -= 360;
+    }
+    if(angle > 360)
+    {
+        angle -= 360;
     }
 
 }

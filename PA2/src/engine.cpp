@@ -89,8 +89,12 @@ void Engine::Keyboard()
                   m_running = false;
                   break;
 
-              case SDLK_a:
-                  m_graphics->m_cube->direction *= -1.0f;
+              case SDLK_a:// swap false to true and true to false to switch direction on spin
+                  m_graphics->m_cube->spin_direction = !m_graphics->m_cube->spin_direction;
+                  break;
+
+            case SDLK_s:// swap false to true and true to false to switch direction on spin
+                  m_graphics->m_cube->orbit_direction = !m_graphics->m_cube->orbit_direction;
                   break;
           }
 

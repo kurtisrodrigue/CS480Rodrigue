@@ -36,8 +36,9 @@ bool Shader::Initialize()
 bool Shader::AddShader(GLenum ShaderType)
 {
     std::string s;
+    std::string temp;
     std::ofstream fileout;
-
+/*
     if(ShaderType == GL_VERTEX_SHADER)
     {
         s = "#version 330\n \
@@ -78,7 +79,7 @@ bool Shader::AddShader(GLenum ShaderType)
     fileout.clear();
 
     fileout << s;
-
+*/
     std::ifstream filein;
     if(ShaderType == GL_VERTEX_SHADER)
     {
@@ -90,6 +91,12 @@ bool Shader::AddShader(GLenum ShaderType)
     }
 
     filein >> s;
+    while(filein.good())
+    {
+        getline(filein, temp);
+        s.append(temp);
+        s.append("\n");
+    }
 
     fileout.close();
     filein.close();
