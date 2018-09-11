@@ -4,6 +4,7 @@
 
 ## Controls
 Reverse spin direction: A
+
 Reverse orbit direction: S
 
 ## Dependency Instructions
