@@ -3,9 +3,9 @@
 # Dependencies, Building, and Running
 
 ## Controls
-Reverse spin direction: A
+Reverse spin direction: A, LEFT_ARROW
 
-Reverse orbit direction: S
+Reverse orbit direction: S, RIGHT_ARROW
 
 ## Dependency Instructions
 For both of the operating systems to run this project installation of these three programs are required [GLEW](http://glew.sourceforge.net/), [GLM](http://glm.g-truc.net/0.9.7/index.html), and [SDL2](https://wiki.libsdl.org/Tutorials).
