@@ -2,7 +2,7 @@
 
 Object::Object()
 {
-    char obj_file[50] = "../src/board.obj";
+    char obj_file[50] = "../src/dragon.obj";
     LoadOBJ(obj_file);
   // The index works at a 0th index
   for(unsigned int i = 0; i < Indices.size(); i++)
@@ -138,16 +138,6 @@ void Object::LoadOBJ(char* obj)
         }
 
 
-    }
-
-    for (int i = 0; i < Vertices.size(); i++)
-    {
-        std::cout << Vertices[i].vertex.x << Vertices[i].vertex.y << Vertices[i].vertex.z << std::endl;
-        std::cout << Vertices[i].color.x << Vertices[i].color.y << Vertices[i].color.z << std::endl;
-    }
-    for (int i = 0; i < Vertices.size(); i++)
-    {
-        std::cout << Indices[i] << std::endl;
     }
 
 }
