@@ -23,6 +23,8 @@ class Object
     GLuint VB;
     GLuint IB;
 
+    const aiScene* m_aiscene;
+
     float angle;
     float orbit_angle;
     float orbit_radius;

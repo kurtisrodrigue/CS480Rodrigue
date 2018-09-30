@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=gnu++11 -g
 
 CXX_DEFINES = -DUNIX
 
-CXX_INCLUDES = -I/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA4/include -I/usr/local/include/SDL2 -I/usr/local/include 
+CXX_INCLUDES = -I/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/include -I/usr/local/include/SDL2 -I/usr/local/include 
 

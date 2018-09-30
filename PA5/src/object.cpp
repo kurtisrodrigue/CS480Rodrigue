@@ -86,60 +86,29 @@ void Object::Render()
 
 void Object::LoadOBJ(char* obj)
 {
-    std::ifstream fin(obj);
-    char line_header[10];
-    char garbage[50]; //for comments
-    char obj_name[50];
-    unsigned int temp_num;
-    float temp1, temp2, temp3;
-    srand(time(0));
-    //std::cout << "LoadOBJ " << std::endl;
+	Assimp::Importer importer;
+	std::ifstream fin(obj);
 
+	m_aiscene = importer.ReadFile(obj, aiProcess_Triangulate);
 
-    while( fin.good()) {
+	for (int i = 0; i < m_aiscene->mNumMeshes; i++) {
+		for (int j = 0; j < m_aiscene->mMeshes[i]->mNumVertices; j++) {
+			Vertices.push_back(Vertex(glm::vec3(float(m_aiscene->mMeshes[i]->mVertices[j].x),
+			                                    float(m_aiscene->mMeshes[i]->mVertices[j].y),
+			                                    float(m_aiscene->mMeshes[i]->mVertices[j].z)),
+			                          glm::vec3(float(m_aiscene->mMeshes[i]->mVertices[j].x),
+			                                    float(m_aiscene->mMeshes[i]->mVertices[j].y),
+			                                    float(m_aiscene->mMeshes[i]->mVertices[j].z))));
+		}
 
-        if (fin.peek() == '#')
-        {
-            fin.getline(garbage, 50);
-        }
-        else
-        {
-            fin >> line_header; // read till white space
-            if (!strcmp(line_header, "o"))
-            {
-                fin >> obj_name;
-            }
+	}
+	for (int i = 0; i < m_aiscene->mNumMeshes; i++) {
+		for (int j = 0; j < m_aiscene->mMeshes[i]->mNumFaces; j++) {
+			for (int k = 0; k < m_aiscene->mMeshes[i]->mFaces[j].mNumIndices; k++) {
+				unsigned int key = m_aiscene->mMeshes[i]->mFaces[j].mIndices[k];
 
-            if (!strcmp(line_header, "v"))
-            {
-                fin >> temp1 >> temp2 >> temp3;
-                Vertices.push_back(Vertex(glm::vec3(temp1, temp2, temp3),
-                                         glm::vec3(float(rand() % 1000)/float(1000), float(rand() % 1000)/float(1000), float(rand() % 1000)/float(1000))));
-                fin.getline(garbage, 50);
-            }
-            else if (!strcmp(line_header, "vn"))
-            {
-                fin.getline(garbage, 50); //implement later
-            }
-            else if (!strcmp(line_header, "f"))
-            {
-                for(int i = 0; i < 3; i++) // read the triangle
-                {
-                    fin >> temp_num;
-                    Indices.push_back(temp_num);
-                    fin >> garbage; // the "//#" part
-                }
-
-            }
-            else
-            {
-                fin.getline(garbage, 50); //implement later
-            }
-        }
-
-
-    }
-
+				Indices.push_back(key);
+			}
+		}
+	}
 }
-
-

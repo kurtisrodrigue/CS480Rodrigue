@@ -5,9 +5,16 @@
 #include <fstream>
 #include <stdlib.h>
 #include <time.h>
+#include <set>
 
 #define GLM_ENABLE_EXPERIMENTAL
 #define GL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED
+
+//Assimp Includes
+#include <assimp/Importer.hpp>      // C++ importer interface
+#include <assimp/scene.h>           // Output data structure
+#include <assimp/postprocess.h>
+#include <assimp/color4.h>
 
 #if defined(__APPLE__) || defined(MACOSX)
   #include <OpenGL/gl3.h>
