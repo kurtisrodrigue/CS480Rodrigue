@@ -10,7 +10,7 @@ Jeffrey Williams
 
 # Dependencies, Building, and Running
 
-###Assimp:
+### Assimp:
 
 Enter the following commands into terminal to install.
 
