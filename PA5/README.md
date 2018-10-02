@@ -1,8 +1,11 @@
 # PA5: Assimp Model Loading
 
 # Team Members:
+
 Thomas McCrone
+
 Kurtis Rodrigue
+
 Jeffrey Williams
 
 # Dependencies, Building, and Running
