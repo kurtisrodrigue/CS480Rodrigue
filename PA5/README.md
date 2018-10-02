@@ -1,6 +1,25 @@
-# PA1: Spinning Cube
+# PA5: Assimp Model Loading
+
+# Team Members:
+Thomas McCrone
+Kurtis Rodrigue
+Jeffrey Williams
 
 # Dependencies, Building, and Running
+
+Assimp:
+
+Enter the following commands into terminal to install.
+
+Mac: 
+```bash
+brew install assimp
+```
+
+Linux: 
+```bash
+sudo apt-get install assimp
+```
 
 ## Controls
 Reverse spin direction: A
