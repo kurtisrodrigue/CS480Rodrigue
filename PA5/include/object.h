@@ -12,7 +12,7 @@ class Object
     ~Object();
     void Update(unsigned int dt);
     void Render();
-    void LoadOBJ(char* obj);
+    void LoadOBJ(const char* obj);
 
     glm::mat4 GetModel();
 

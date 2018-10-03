@@ -2,8 +2,12 @@
 
 Object::Object()
 {
-    char obj_file[50] = "../src/dragon.obj";
-    LoadOBJ(obj_file);
+    std::string obj_file = "../assets/";
+    std::string file_name;
+    std::cout << "Please enter the name of the file you would like to load (include extension): " << std::endl;
+    std::cin >> file_name;
+    obj_file = obj_file + file_name;
+    LoadOBJ(obj_file.c_str());
   // The index works at a 0th index
   for(unsigned int i = 0; i < Indices.size(); i++)
   {
@@ -84,7 +88,7 @@ void Object::Render()
   glDisableVertexAttribArray(1);
 }
 
-void Object::LoadOBJ(char* obj)
+void Object::LoadOBJ(const char* obj)
 {
 	Assimp::Importer importer;
 	std::ifstream fin(obj);
@@ -103,12 +107,12 @@ void Object::LoadOBJ(char* obj)
 
 	}
 	for (int i = 0; i < m_aiscene->mNumMeshes; i++) {
+		std::cout << "i: " << i << std::endl;
 		for (int j = 0; j < m_aiscene->mMeshes[i]->mNumFaces; j++) {
-			for (int k = 0; k < m_aiscene->mMeshes[i]->mFaces[j].mNumIndices; k++) {
-				unsigned int key = m_aiscene->mMeshes[i]->mFaces[j].mIndices[k];
+				Indices.push_back(m_aiscene->mMeshes[i]->mFaces[j].mIndices[0]);
+				Indices.push_back(m_aiscene->mMeshes[i]->mFaces[j].mIndices[1]);
+				Indices.push_back(m_aiscene->mMeshes[i]->mFaces[j].mIndices[2]);
 
-				Indices.push_back(key);
-			}
 		}
 	}
 }
