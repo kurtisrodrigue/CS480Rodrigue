@@ -8,11 +8,11 @@ Object::Object()
     std::cin >> file_name;
     obj_file = obj_file + file_name;
     LoadOBJ(obj_file.c_str());
-  // The index works at a 0th index
+  /* The index works at a 0th index
   for(unsigned int i = 0; i < Indices.size(); i++)
   {
     Indices[i] = Indices[i] - 1;
-  }
+  }*/
 
   angle = 0.0f;
   orbit_angle = 0.0f;
