@@ -23,6 +23,8 @@ class Object
     GLuint VB;
     GLuint IB;
 
+    GLuint texture;
+
     const aiScene* m_aiscene;
 
     Magick::Blob m_blob;
