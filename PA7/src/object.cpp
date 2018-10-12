@@ -2,17 +2,13 @@
 
 Object::Object()
 {
-    std::string obj_file = "../assets/";
-    std::string file_name;
-    std::cout << "Please enter the name of the file you would like to load (include extension): " << std::endl;
-    std::cin >> file_name;
-    obj_file = obj_file + file_name;
-    LoadOBJ(obj_file.c_str());
+    LoadOBJ("../assets/sphere.obj");
     
     Magick::Image *image;
-    image = new Magick::Image("../assets/granite.jpg");
+    image = new Magick::Image("../assets/8k_sun.jpg");
     image->write(&m_blob, "RGBA");
-    
+
+    glEnable(GL_TEXTURE_2D);
     glGenTextures(1, &texture);
     glBindTexture(GL_TEXTURE_2D, texture);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->columns(), image->rows(), 0, GL_RGBA, GL_UNSIGNED_BYTE, m_blob.data());
@@ -22,7 +18,6 @@ Object::Object()
 
   angle = 0.0f;
   orbit_angle = 0.0f;
-  orbit_radius = 10;
 
   glGenBuffers(1, &VB);
   glBindBuffer(GL_ARRAY_BUFFER, VB);
@@ -43,7 +38,6 @@ Moon::Moon(Planet* origin)
 {
     m_planet = origin;
     orbit_radius = 3;
-
 }
 
 Planet::Planet()
@@ -222,4 +216,74 @@ void Object::LoadOBJ(const char* obj)
             
         }
     }
+}
+
+Sun::Sun()
+{
+    texture_file = "../assets/8k_sun.jpg";
+
+    orbit_radius = 0;
+}
+
+Mercury::Mercury()
+{
+	texture_file = "../assets/8k_mercury.jpg";
+
+    orbit_radius = 4;
+}
+
+Venus::Venus()
+{
+    texture_file = "../assets/8k_venus_surface.jpg";
+
+    orbit_radius = 6;
+}
+
+Earth::Earth()
+{
+    texture_file = "../assets/1_earth_8k.jpg";
+
+    orbit_radius = 8;
+}
+
+Mars::Mars()
+{
+	texture_file = "../assets/8k_mars.jpg";
+
+	orbit_radius = 10;
+}
+
+Jupiter::Jupiter()
+{
+	texture_file = "../assets/8k_jupiter.jpg";
+
+	orbit_radius = 16;
+}
+
+Saturn::Saturn()
+{
+	texture_file = "../assets/8k_saturn.jpg";
+
+	orbit_radius = 20;
+}
+
+Uranus::Uranus()
+{
+	texture_file = "../assets/2k_uranus.jpg";
+
+	orbit_radius = 24;
+}
+
+Neptune::Neptune()
+{
+	texture_file = "../assets/2k_neptune.jpg";
+
+	orbit_radius = 28;
+}
+
+Pluto::Pluto()
+{
+	texture_file = "../assets/pluto_texture.jpg";
+
+	orbit_radius = 4;
 }

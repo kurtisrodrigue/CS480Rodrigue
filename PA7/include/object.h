@@ -38,6 +38,15 @@ class Object
     float orbit_radius;
     bool orbit_direction;
     bool spin_direction;
+
+
+	std::string obj_file;
+	std::string texture_file;
+};
+
+class Sun : public Object
+{
+	Sun();
 };
 
 class Moon : public Object
@@ -57,6 +66,52 @@ public:
     Planet();
     virtual void Update(unsigned int dt);
     std::vector<Moon*> m_moons;
+
+};
+
+class Mercury: public Planet
+{
+	Mercury();
+};
+
+class Venus: public Planet
+{
+	Venus();
+};
+
+class Earth: public Planet
+{
+	Earth();
+};
+
+class Mars: public Planet
+{
+	Mars();
+};
+
+class Jupiter: public Planet
+{
+	Jupiter();
+};
+
+class Saturn: public Planet
+{
+	Saturn();
+};
+
+class Uranus: public Planet
+{
+	Uranus();
+};
+
+class Neptune: public Planet
+{
+	Neptune();
+};
+
+class Pluto : public Planet
+{
+	Pluto();
 };
 
 #endif /* OBJECT_H */
