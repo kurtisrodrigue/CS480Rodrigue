@@ -14,18 +14,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d86e558a-d463-42f4-bbeb-dcf6a09b4cf6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/engine.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/engine.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/graphics.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/graphics.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/object.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/object.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Tutorial" beforeDir="false" afterPath="$PROJECT_DIR$/build/Tutorial" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/graphics_headers.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/graphics_headers.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/shaders/shader.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaders/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/shaders/shader.vert" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -110,17 +98,18 @@
     <session id="1034215164">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.4" value="3" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cbp" value="1" />
           <entry key="cmake" value="3" />
-          <entry key="cpp" value="1" />
+          <entry key="cpp" value="3" />
           <entry key="h" value="3" />
           <entry key="txt" value="1" />
         </counts>
@@ -129,19 +118,19 @@
         <counts>
           <entry key="CMakeCache.txt" value="1" />
           <entry key="CMakeLists.txt" value="3" />
-          <entry key="ObjectiveC" value="4" />
+          <entry key="ObjectiveC" value="6" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cpp" value="754" />
-          <entry key="h" value="352" />
+          <entry key="h" value="384" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="1106" />
+          <entry key="ObjectiveC" value="1138" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.cidr.testingFrameworks.usages" />
@@ -155,8 +144,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/object.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="114" selection-start-line="114" selection-end-line="114" />
+                <state relative-caret-position="1237">
+                  <caret line="117" column="12" selection-start-line="117" selection-start-column="12" selection-end-line="117" selection-end-column="12" />
                 </state>
               </provider>
             </entry>
@@ -165,25 +154,43 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/include/object.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="585">
-                  <caret line="39" selection-start-line="39" selection-end-line="39" />
+                <state relative-caret-position="420">
+                  <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/include/graphics_headers.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="226">
-                  <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+                <state relative-caret-position="375">
+                  <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
                   <folding>
                     <element signature="e#55#74#0" expanded="true" />
                     <element signature="e#262#323#0" expanded="true" />
                     <element signature="e#728#750#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/graphics.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1935">
+                  <caret line="129" column="32" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/shader.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="245">
+                  <caret line="76" column="43" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="43" />
                 </state>
               </provider>
             </entry>
@@ -205,9 +212,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/graphics.cpp" />
         <option value="$PROJECT_DIR$/src/shader.cpp" />
-        <option value="$PROJECT_DIR$/include/object.h" />
         <option value="$PROJECT_DIR$/include/graphics_headers.h" />
         <option value="$PROJECT_DIR$/src/object.cpp" />
+        <option value="$PROJECT_DIR$/include/object.h" />
       </list>
     </option>
   </component>
@@ -228,7 +235,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,6 +256,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -319,19 +326,21 @@
       <workItem from="1538937680345" duration="2099000" />
       <workItem from="1539013785323" duration="1630000" />
       <workItem from="1539110238609" duration="2277000" />
-      <workItem from="1539117753395" duration="408000" />
+      <workItem from="1539117753395" duration="818000" />
+      <workItem from="1539144297972" duration="2088000" />
+      <workItem from="1539359107719" duration="572000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18833000" />
+    <option name="totallyTimeSpent" value="21903000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.70331585" visible="true" weight="0.14652015" />
-      <window_info id="Structure" order="1" sideWeight="0.29668412" side_tool="true" visible="true" weight="0.14652015" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.69982547" visible="true" weight="0.15018316" />
+      <window_info id="Structure" order="1" sideWeight="0.30017453" side_tool="true" visible="true" weight="0.15018316" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -365,22 +374,8 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/board.obj" />
-    <entry file="file://$PROJECT_DIR$/src/graphics.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/window.cpp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shader.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
       <provider selected="true" editor-type-id="text-editor" />
@@ -396,20 +391,27 @@
         <state relative-caret-position="-6135" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/object.h">
+    <entry file="file://$PROJECT_DIR$/src/graphics.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="1935">
+          <caret line="129" column="32" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeModules/FindGLEW.cmake">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/shader.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="76" column="43" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/include/graphics_headers.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        <state relative-caret-position="375">
+          <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
           <folding>
             <element signature="e#55#74#0" expanded="true" />
             <element signature="e#262#323#0" expanded="true" />
@@ -418,10 +420,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/object.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/object.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        <state relative-caret-position="1237">
+          <caret line="117" column="12" selection-start-line="117" selection-start-column="12" selection-end-line="117" selection-end-column="12" />
         </state>
       </provider>
     </entry>
