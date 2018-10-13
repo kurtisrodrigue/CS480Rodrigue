@@ -1,11 +1,14 @@
 #include "object.h"
 
-Object::Object()
+Object::Object(std::string file)
 {
+    orbit_direction = 1;
+    spin_direction = 1;
+
     LoadOBJ("../assets/sphere.obj");
     
     Magick::Image *image;
-    image = new Magick::Image("../assets/8k_sun.jpg");
+    image = new Magick::Image(file);
     image->write(&m_blob, "RGBA");
 
     glEnable(GL_TEXTURE_2D);
@@ -34,13 +37,13 @@ Object::~Object()
   Indices.clear();
 }
 
-Moon::Moon(Planet* origin)
+Moon::Moon(Planet* origin) : Object("../assets/8k_mercury.jpg")
 {
     m_planet = origin;
     orbit_radius = 3;
 }
 
-Planet::Planet()
+Planet::Planet(std::string file) : Object(file)
 {
 
 }
@@ -64,8 +67,12 @@ void Object::Update(unsigned int dt)
         angle -=  dt * M_PI/10;
     }
 
-    model = glm::translate(glm::mat4(1.0f), glm::vec3(orbit_radius * cos(orbit_angle),0,orbit_radius * sin(orbit_angle)));
+
+    model = glm::scale(glm::mat4(1.0f), glm::vec3(m_size, m_size, m_size));
+    model = glm::translate(model, glm::vec3(orbit_radius * cos(orbit_angle),0,orbit_radius * sin(orbit_angle)));
     model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0, 1.0, 0.0));
+
+
 
    //model = glm::translate(model, glm::vec3(orbit_radius * cos(orbit_angle),0,orbit_radius * sin(orbit_angle)));
 
@@ -78,6 +85,11 @@ void Object::Update(unsigned int dt)
         angle -= 360;
     }
 
+}
+
+glm::mat4 Object::Scale()
+{
+	return glm::scale(model, glm::vec3(m_size, m_size, m_size));
 }
 
 glm::mat4 Object::GetModel()
@@ -122,6 +134,7 @@ void Moon::Update(unsigned int dt)
         angle -=  dt * M_PI/500;
     }
 
+
     model = glm::translate(glm::mat4(1.0f), glm::vec3(m_planet->orbit_radius * cos(m_planet->orbit_angle),0,m_planet->orbit_radius * sin(m_planet->orbit_angle)));
     model = glm::translate(model, glm::vec3(orbit_radius * cos(orbit_angle),0,orbit_radius * sin(orbit_angle)));
     model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0, 1.0, 0.0));
@@ -161,6 +174,8 @@ void Planet::Update(unsigned int dt)
         angle -=  dt * M_PI/700;
     }
 
+    //std::cout << "msize: " << m_size << std::endl;
+    // std::cout << "orbit_radius: " << orbit_radius << std::endl;
     model = glm::translate(glm::mat4(1.0f),
             glm::vec3(orbit_radius * cos(orbit_angle),
                     0,
@@ -175,6 +190,8 @@ void Planet::Update(unsigned int dt)
     }
 
     model = glm::rotate(model, angle, glm::vec3(0.0, 1.0, 0.0));
+    model = glm::scale(model, glm::vec3(m_size/10.0f, m_size/10.0f, m_size/10.0f));
+
 
     if(orbit_angle > 360)
     {
@@ -218,72 +235,107 @@ void Object::LoadOBJ(const char* obj)
     }
 }
 
-Sun::Sun()
+Sun::Sun(std::string file) : Object(file)
 {
-    texture_file = "../assets/8k_sun.jpg";
-
     orbit_radius = 0;
+
+    m_size = 15;
+
+    m_planets.push_back(new Mercury("../assets/8k_mercury.jpg"));
+    m_planets.push_back(new Venus("../assets/8k_venus_surface.jpg"));
+    m_planets.push_back(new Earth("../assets/1_earth_8k.jpg"));
+    m_planets.push_back(new Mars("../assets/8k_mars.jpg"));
+    m_planets.push_back(new Jupiter("../assets/8k_jupiter.jpg"));
+    m_planets.push_back(new Saturn("../assets/8k_saturn.jpg"));
+    m_planets.push_back(new Uranus("../assets/2k_uranus.jpg"));
+    m_planets.push_back(new Neptune("../assets/2k_neptune.jpg"));
+    m_planets.push_back(new Pluto("../assets/pluto_texture.jpg"));
 }
 
-Mercury::Mercury()
+void Sun::Update(unsigned int dt)
 {
-	texture_file = "../assets/8k_mercury.jpg";
+    if(orbit_direction)
+    {
+        orbit_angle += dt * M_PI/1000;
+    }
+    else
+    {
+        orbit_angle -= dt * M_PI/1000;
+    }
+    if(spin_direction)
+    {
+        angle +=  dt * M_PI/10;
+    }
+    else
+    {
+        angle -=  dt * M_PI/10;
+    }
+
+
+
+    model = glm::rotate(glm::mat4(1.0f), glm::radians(angle), glm::vec3(0.0, 1.0, 0.0));
+    model = glm::scale(model, glm::vec3(m_size/10.0f, m_size/10.0f, m_size/10.0f));
+}
+
+Mercury::Mercury(std::string file): Planet(file)
+{
 
     orbit_radius = 4;
+    m_size = 3;
 }
 
-Venus::Venus()
+Venus::Venus(std::string file): Planet(file)
 {
-    texture_file = "../assets/8k_venus_surface.jpg";
 
     orbit_radius = 6;
+	m_size = 6;
 }
 
-Earth::Earth()
+Earth::Earth(std::string file): Planet(file)
 {
-    texture_file = "../assets/1_earth_8k.jpg";
 
     orbit_radius = 8;
+	m_size = 6;
 }
 
-Mars::Mars()
+Mars::Mars(std::string file): Planet(file)
 {
-	texture_file = "../assets/8k_mars.jpg";
 
 	orbit_radius = 10;
+	m_size = 4;
 }
 
-Jupiter::Jupiter()
+Jupiter::Jupiter(std::string file): Planet(file)
 {
-	texture_file = "../assets/8k_jupiter.jpg";
 
 	orbit_radius = 16;
+	m_size = 9;
 }
 
-Saturn::Saturn()
+Saturn::Saturn(std::string file): Planet(file)
 {
-	texture_file = "../assets/8k_saturn.jpg";
 
 	orbit_radius = 20;
+	m_size = 8;
 }
 
-Uranus::Uranus()
+Uranus::Uranus(std::string file): Planet(file)
 {
-	texture_file = "../assets/2k_uranus.jpg";
 
 	orbit_radius = 24;
+	m_size = 7;
 }
 
-Neptune::Neptune()
+Neptune::Neptune(std::string file): Planet(file)
 {
-	texture_file = "../assets/2k_neptune.jpg";
 
 	orbit_radius = 28;
+	m_size = 7;
 }
 
-Pluto::Pluto()
+Pluto::Pluto(std::string file): Planet(file)
 {
-	texture_file = "../assets/pluto_texture.jpg";
 
 	orbit_radius = 4;
+	m_size = 3;
 }

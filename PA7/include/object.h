@@ -11,9 +11,11 @@ class Object
     friend class Graphics;
   public:
     Object();
+    Object(std::string);
     ~Object();
     virtual void Update(unsigned int dt);
     virtual void Render();
+    glm::mat4 Scale();
 
     glm::mat4 GetModel();
     
@@ -39,6 +41,8 @@ class Object
     bool orbit_direction;
     bool spin_direction;
 
+    double m_size;
+
 
 	std::string obj_file;
 	std::string texture_file;
@@ -46,7 +50,10 @@ class Object
 
 class Sun : public Object
 {
-	Sun();
+public:
+	Sun(std::string);
+	virtual void Update(unsigned int dt);
+	std::vector<Planet*> m_planets;
 };
 
 class Moon : public Object
@@ -63,7 +70,7 @@ class Planet : public Object
 {
 public:
     friend class Moon;
-    Planet();
+    Planet(std::string);
     virtual void Update(unsigned int dt);
     std::vector<Moon*> m_moons;
 
@@ -71,47 +78,56 @@ public:
 
 class Mercury: public Planet
 {
-	Mercury();
+public:
+	Mercury(std::string);
 };
 
 class Venus: public Planet
 {
-	Venus();
+public:
+	Venus(std::string);
 };
 
 class Earth: public Planet
 {
-	Earth();
+public:
+	Earth(std::string);
 };
 
 class Mars: public Planet
 {
-	Mars();
+public:
+	Mars(std::string);
 };
 
 class Jupiter: public Planet
 {
-	Jupiter();
+public:
+	Jupiter(std::string);
 };
 
 class Saturn: public Planet
 {
-	Saturn();
+public:
+	Saturn(std::string);
 };
 
 class Uranus: public Planet
 {
-	Uranus();
+public:
+	Uranus(std::string);
 };
 
 class Neptune: public Planet
 {
-	Neptune();
+public:
+	Neptune(std::string);
 };
 
 class Pluto : public Planet
 {
-	Pluto();
+public:
+	Pluto(std::string);
 };
 
 #endif /* OBJECT_H */

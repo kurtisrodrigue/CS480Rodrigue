@@ -45,8 +45,7 @@ bool Graphics::Initialize(int width, int height)
   }
 
   // Create the object
-  m_earth = new Planet();
-  m_earth->m_moons.push_back(new Moon(m_earth));
+  m_sun = new Sun("../assets/8k_sun.jpg");
 
   // Set up the shaders
   m_shader = new Shader();
@@ -111,10 +110,13 @@ bool Graphics::Initialize(int width, int height)
 void Graphics::Update(unsigned int dt)
 {
   // Update the object
-  m_earth->Update(dt);
-  for(int i = 0; i < m_earth->m_moons.size();i++)
+  for(int i = 0; i < m_sun->m_planets.size(); i++)
   {
-      m_earth->m_moons[i]->Update(dt);
+    m_sun->m_planets[i]->Update(dt);
+    for (int j = 0; j < m_sun->m_planets[i]->m_moons.size(); j++)
+    {
+      m_sun->m_planets[i]->m_moons[j]->Update(dt);
+    }
   }
 }
 
@@ -132,14 +134,19 @@ void Graphics::Render()
   glUniformMatrix4fv(m_viewMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetView())); 
 
   // Render the object
-  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_earth->GetModel()));
-  m_earth->Render();
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_sun->GetModel()));
+  m_sun->Render();
 
-  for(int i = 0; i < m_earth->m_moons.size(); i++)
+  for(int i = 0; i < m_sun->m_planets.size(); i++)
   {
     //m_earth->m_moons[i]->model = glm::scale(glm::vec3(0.1f, 0.1f, 0.1f));
-    glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_earth->m_moons[i]->GetModel()));
-    m_earth->m_moons[i]->Render();
+    glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_sun->m_planets[i]->GetModel()));
+    m_sun->m_planets[i]->Render();
+    for(int j = 0; j < m_sun->m_planets[i]->m_moons.size(); j++)
+    {
+      glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_sun->m_planets[i]->m_moons[j]->GetModel()));
+      m_sun->m_planets[i]->m_moons[j]->Render();
+    }
   }
 
   // Get any errors from OpenGL

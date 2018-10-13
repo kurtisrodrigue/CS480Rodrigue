@@ -29,7 +29,7 @@ class Graphics
     GLint m_viewMatrix;
     GLint m_modelMatrix;
 
-    Planet *m_earth;
+    Sun *m_sun;
 };
 
 #endif /* GRAPHICS_H */
