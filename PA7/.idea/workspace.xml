@@ -13,17 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9771683-28b1-4def-b612-3978bf23c028" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../PA6/build/CMakeFiles/Tutorial.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../PA6/build/CMakeFiles/Tutorial.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sphere.obj" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sphere.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/object.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/object.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/Tutorial" beforeDir="false" afterPath="$PROJECT_DIR$/build/Tutorial" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/graphics_headers.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/graphics_headers.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/shader.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -165,13 +157,13 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="1775" />
+          <entry key="cpp" value="1781" />
           <entry key="h" value="530" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="2305" />
+          <entry key="ObjectiveC" value="2311" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.cidr.testingFrameworks.usages" />
@@ -184,8 +176,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/object.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
-                  <caret line="104" column="31" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
+                <state relative-caret-position="105">
+                  <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
@@ -392,12 +384,12 @@
       <workItem from="1539618555789" duration="715000" />
       <workItem from="1539619610732" duration="295000" />
       <workItem from="1539639001719" duration="1109000" />
-      <workItem from="1539726469365" duration="2031000" />
+      <workItem from="1539726469365" duration="2510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34155000" />
+    <option name="totallyTimeSpent" value="34634000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
@@ -557,8 +549,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/object.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="104" column="31" selection-start-line="104" selection-start-column="31" selection-end-line="104" selection-end-column="31" />
+        <state relative-caret-position="105">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
         </state>
       </provider>
     </entry>

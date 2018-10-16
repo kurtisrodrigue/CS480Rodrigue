@@ -5,7 +5,7 @@ Object::Object(std::string file)
     orbit_direction = 1;
     spin_direction = 1;
 
-    LoadOBJ("../assets/buddha.obj");
+    LoadOBJ("../assets/sphere.obj");
 
     Magick::Image *image;
     image = new Magick::Image(file);
