@@ -5,8 +5,8 @@ Object::Object(std::string file)
     orbit_direction = 1;
     spin_direction = 1;
 
-    LoadOBJ("../assets/sphere.obj");
-    
+    LoadOBJ("../assets/buddha.obj");
+
     Magick::Image *image;
     image = new Magick::Image(file);
     image->write(&m_blob, "RGBA");
@@ -100,18 +100,24 @@ glm::mat4 Object::GetModel()
 void Object::Render()
 {
   glEnableVertexAttribArray(0);
-  glEnableVertexAttribArray(1);
+
+    glEnableVertexAttribArray(1);
+    glEnableVertexAttribArray(2);
 
   glBindBuffer(GL_ARRAY_BUFFER, VB);
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
   glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex,color));
+  glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex,Texture));
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
 
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
 
+  glActiveTexture(GL_TEXTURE0);
   glDrawElements(GL_TRIANGLES, Indices.size(), GL_UNSIGNED_INT, 0);
 
   glDisableVertexAttribArray(0);
   glDisableVertexAttribArray(1);
+  glDisableVertexAttribArray(2);
 }
 
 void Moon::Update(unsigned int dt)
@@ -207,30 +213,34 @@ void Object::LoadOBJ(const char* obj)
 {
     Assimp::Importer importer;
     std::ifstream fin(obj);
-    
+
     m_aiscene = importer.ReadFile(obj, aiProcess_Triangulate);
-    
+
     for (int i = 0; i < m_aiscene->mNumMeshes; i++) {
         for (int j = 0; j < m_aiscene->mMeshes[i]->mNumVertices; j++) {
             glm::vec3 temp_vertex(float(m_aiscene->mMeshes[i]->mVertices[j].x),
                                   float(m_aiscene->mMeshes[i]->mVertices[j].y),
                                   float(m_aiscene->mMeshes[i]->mVertices[j].z));
             glm::vec2 temp_textures;
+
             if(m_aiscene->mMeshes[i]->mTextureCoords[0] != NULL)
-            temp_textures = glm::vec2(float(m_aiscene->mMeshes[i]->mTextureCoords[0][j].x),
-                                      float(m_aiscene->mMeshes[i]->mTextureCoords[0][j].y));
-            
+            {
+	            temp_textures = glm::vec2(m_aiscene->mMeshes[i]->mTextureCoords[0][j].x,
+	                                      m_aiscene->mMeshes[i]->mTextureCoords[0][j].y);
+            }
+
+
             Vertices.push_back(Vertex(temp_vertex, temp_vertex,temp_textures));
         }
-        
-        
+
+
     }
     for (int i = 0; i < m_aiscene->mNumMeshes; i++) {
         for (int j = 0; j < m_aiscene->mMeshes[i]->mNumFaces; j++) {
             Indices.push_back(m_aiscene->mMeshes[i]->mFaces[j].mIndices[0]);
             Indices.push_back(m_aiscene->mMeshes[i]->mFaces[j].mIndices[1]);
             Indices.push_back(m_aiscene->mMeshes[i]->mFaces[j].mIndices[2]);
-            
+
         }
     }
 }

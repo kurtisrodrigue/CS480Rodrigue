@@ -158,7 +158,6 @@ CMakeFiles/Tutorial.dir/src/camera.cpp.o: /usr/local/include/assimp/metadata.h
 CMakeFiles/Tutorial.dir/src/camera.cpp.o: /usr/local/include/assimp/postprocess.h
 CMakeFiles/Tutorial.dir/src/camera.cpp.o: /usr/local/include/assimp/quaternion.h
 CMakeFiles/Tutorial.dir/src/camera.cpp.o: /usr/local/include/assimp/scene.h
-CMakeFiles/Tutorial.dir/src/camera.cpp.o: /usr/local/include/assimp/texture.h
 CMakeFiles/Tutorial.dir/src/camera.cpp.o: /usr/local/include/assimp/types.h
 CMakeFiles/Tutorial.dir/src/camera.cpp.o: /usr/local/include/assimp/vector2.h
 CMakeFiles/Tutorial.dir/src/camera.cpp.o: /usr/local/include/assimp/vector2.inl
@@ -574,7 +573,6 @@ CMakeFiles/Tutorial.dir/src/engine.cpp.o: /usr/local/include/assimp/metadata.h
 CMakeFiles/Tutorial.dir/src/engine.cpp.o: /usr/local/include/assimp/postprocess.h
 CMakeFiles/Tutorial.dir/src/engine.cpp.o: /usr/local/include/assimp/quaternion.h
 CMakeFiles/Tutorial.dir/src/engine.cpp.o: /usr/local/include/assimp/scene.h
-CMakeFiles/Tutorial.dir/src/engine.cpp.o: /usr/local/include/assimp/texture.h
 CMakeFiles/Tutorial.dir/src/engine.cpp.o: /usr/local/include/assimp/types.h
 CMakeFiles/Tutorial.dir/src/engine.cpp.o: /usr/local/include/assimp/vector2.h
 CMakeFiles/Tutorial.dir/src/engine.cpp.o: /usr/local/include/assimp/vector2.inl
@@ -944,7 +942,6 @@ CMakeFiles/Tutorial.dir/src/graphics.cpp.o: /usr/local/include/assimp/metadata.h
 CMakeFiles/Tutorial.dir/src/graphics.cpp.o: /usr/local/include/assimp/postprocess.h
 CMakeFiles/Tutorial.dir/src/graphics.cpp.o: /usr/local/include/assimp/quaternion.h
 CMakeFiles/Tutorial.dir/src/graphics.cpp.o: /usr/local/include/assimp/scene.h
-CMakeFiles/Tutorial.dir/src/graphics.cpp.o: /usr/local/include/assimp/texture.h
 CMakeFiles/Tutorial.dir/src/graphics.cpp.o: /usr/local/include/assimp/types.h
 CMakeFiles/Tutorial.dir/src/graphics.cpp.o: /usr/local/include/assimp/vector2.h
 CMakeFiles/Tutorial.dir/src/graphics.cpp.o: /usr/local/include/assimp/vector2.inl
@@ -1360,7 +1357,6 @@ CMakeFiles/Tutorial.dir/src/main.cpp.o: /usr/local/include/assimp/metadata.h
 CMakeFiles/Tutorial.dir/src/main.cpp.o: /usr/local/include/assimp/postprocess.h
 CMakeFiles/Tutorial.dir/src/main.cpp.o: /usr/local/include/assimp/quaternion.h
 CMakeFiles/Tutorial.dir/src/main.cpp.o: /usr/local/include/assimp/scene.h
-CMakeFiles/Tutorial.dir/src/main.cpp.o: /usr/local/include/assimp/texture.h
 CMakeFiles/Tutorial.dir/src/main.cpp.o: /usr/local/include/assimp/types.h
 CMakeFiles/Tutorial.dir/src/main.cpp.o: /usr/local/include/assimp/vector2.h
 CMakeFiles/Tutorial.dir/src/main.cpp.o: /usr/local/include/assimp/vector2.inl
@@ -1728,7 +1724,6 @@ CMakeFiles/Tutorial.dir/src/object.cpp.o: /usr/local/include/assimp/metadata.h
 CMakeFiles/Tutorial.dir/src/object.cpp.o: /usr/local/include/assimp/postprocess.h
 CMakeFiles/Tutorial.dir/src/object.cpp.o: /usr/local/include/assimp/quaternion.h
 CMakeFiles/Tutorial.dir/src/object.cpp.o: /usr/local/include/assimp/scene.h
-CMakeFiles/Tutorial.dir/src/object.cpp.o: /usr/local/include/assimp/texture.h
 CMakeFiles/Tutorial.dir/src/object.cpp.o: /usr/local/include/assimp/types.h
 CMakeFiles/Tutorial.dir/src/object.cpp.o: /usr/local/include/assimp/vector2.h
 CMakeFiles/Tutorial.dir/src/object.cpp.o: /usr/local/include/assimp/vector2.inl
@@ -2096,7 +2091,6 @@ CMakeFiles/Tutorial.dir/src/shader.cpp.o: /usr/local/include/assimp/metadata.h
 CMakeFiles/Tutorial.dir/src/shader.cpp.o: /usr/local/include/assimp/postprocess.h
 CMakeFiles/Tutorial.dir/src/shader.cpp.o: /usr/local/include/assimp/quaternion.h
 CMakeFiles/Tutorial.dir/src/shader.cpp.o: /usr/local/include/assimp/scene.h
-CMakeFiles/Tutorial.dir/src/shader.cpp.o: /usr/local/include/assimp/texture.h
 CMakeFiles/Tutorial.dir/src/shader.cpp.o: /usr/local/include/assimp/types.h
 CMakeFiles/Tutorial.dir/src/shader.cpp.o: /usr/local/include/assimp/vector2.h
 CMakeFiles/Tutorial.dir/src/shader.cpp.o: /usr/local/include/assimp/vector2.inl
