@@ -53,6 +53,7 @@ class Sun : public Object
 public:
 	Sun(std::string);
 	virtual void Update(unsigned int dt);
+	void refactorOrbits();
 	std::vector<Planet*> m_planets;
 };
 
@@ -69,7 +70,11 @@ public:
 class Planet : public Object
 {
 public:
+	double m_orbitSpeed;
+
     friend class Moon;
+    friend class Sun;
+
     Planet(std::string);
     virtual void Update(unsigned int dt);
     std::vector<Moon*> m_moons;

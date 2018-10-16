@@ -88,6 +88,9 @@ void Engine::Keyboard()
               case SDLK_ESCAPE:
                   m_running = false;
                   break;
+          	case SDLK_m:
+          		m_graphics->m_sun->refactorOrbits();
+          		break;
 /*
               case SDLK_a:// swap false to true and true to false to switch direction on spin
                   m_graphics->m_earth->spin_direction = !m_graphics->m_earth->spin_direction;

@@ -165,23 +165,21 @@ void Planet::Update(unsigned int dt)
 {
     if(orbit_direction)
     {
-        orbit_angle += dt * M_PI/1500;
+        orbit_angle += m_orbitSpeed * dt * M_PI/15000;
     }
     else
     {
-        orbit_angle -= dt * M_PI/1500;
+        orbit_angle -= m_orbitSpeed * dt * M_PI/15000;
     }
     if(spin_direction)
     {
-        angle +=  dt * M_PI/700;
+        angle +=  dt * M_PI/7000;
     }
     else
     {
-        angle -=  dt * M_PI/700;
+        angle -=  dt * M_PI/7000;
     }
 
-    //std::cout << "msize: " << m_size << std::endl;
-    // std::cout << "orbit_radius: " << orbit_radius << std::endl;
     model = glm::translate(glm::mat4(1.0f),
             glm::vec3(orbit_radius * cos(orbit_angle),
                     0,
@@ -196,7 +194,7 @@ void Planet::Update(unsigned int dt)
     }
 
     model = glm::rotate(model, angle, glm::vec3(0.0, 1.0, 0.0));
-    model = glm::scale(model, glm::vec3(m_size/10.0f, m_size/10.0f, m_size/10.0f));
+    model = glm::scale(model, glm::vec3(m_size/750.0f, m_size/750.0f, m_size/750.0f));
 
 
     if(orbit_angle > 360)
@@ -248,7 +246,6 @@ void Object::LoadOBJ(const char* obj)
 Sun::Sun(std::string file) : Object(file)
 {
     orbit_radius = 0;
-
     m_size = 15;
 
     m_planets.push_back(new Mercury("../assets/8k_mercury.jpg"));
@@ -260,6 +257,27 @@ Sun::Sun(std::string file) : Object(file)
     m_planets.push_back(new Uranus("../assets/2k_uranus.jpg"));
     m_planets.push_back(new Neptune("../assets/2k_neptune.jpg"));
     m_planets.push_back(new Pluto("../assets/pluto_texture.jpg"));
+}
+
+void Sun::refactorOrbits()
+{
+    static bool factored = false;
+    if(factored)
+    {
+       for(int i = 0; i < m_planets.size(); i++)
+       {
+           m_planets[i]->orbit_radius *= m_planets[i]->orbit_radius;
+       }
+       factored = false;
+    }
+    else
+    {
+        for(int i = 0; i < m_planets.size(); i++)
+        {
+            m_planets[i]->orbit_radius = sqrt(m_planets[i]->orbit_radius);
+        }
+        factored = true;
+    }
 }
 
 void Sun::Update(unsigned int dt)
@@ -283,69 +301,78 @@ void Sun::Update(unsigned int dt)
 
 
 
-    model = glm::rotate(glm::mat4(1.0f), glm::radians(angle), glm::vec3(0.0, 1.0, 0.0));
+    model = glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0, 1.0, 0.0));
     model = glm::scale(model, glm::vec3(m_size/10.0f, m_size/10.0f, m_size/10.0f));
 }
 
 Mercury::Mercury(std::string file): Planet(file)
 {
 
-    orbit_radius = 4;
-    m_size = 3;
+    orbit_radius = 3.9;
+    m_size = 38;
+    m_orbitSpeed = 5.5;
 }
 
 Venus::Venus(std::string file): Planet(file)
 {
 
-    orbit_radius = 6;
-	m_size = 6;
+    orbit_radius = 7.2;
+	m_size = 94;
+    m_orbitSpeed = 4.3;
 }
 
 Earth::Earth(std::string file): Planet(file)
 {
 
-    orbit_radius = 8;
-	m_size = 6;
+    orbit_radius = 10;
+	m_size = 100;
+    m_orbitSpeed = 3.8;
 }
 
 Mars::Mars(std::string file): Planet(file)
 {
 
-	orbit_radius = 10;
-	m_size = 4;
+	orbit_radius = 15.2;
+	m_size = 53;
+    m_orbitSpeed = 3.2;
 }
 
 Jupiter::Jupiter(std::string file): Planet(file)
 {
 
-	orbit_radius = 16;
-	m_size = 9;
+	orbit_radius = 50.2;
+	m_size = 1121;
+    m_orbitSpeed = 5.5;
 }
 
 Saturn::Saturn(std::string file): Planet(file)
 {
 
-	orbit_radius = 20;
-	m_size = 8;
+	orbit_radius = 95.8;
+	m_size = 945;
+    m_orbitSpeed = 3.4;
 }
 
 Uranus::Uranus(std::string file): Planet(file)
 {
 
-	orbit_radius = 24;
-	m_size = 7;
+	orbit_radius = 192;
+	m_size = 401;
+    m_orbitSpeed = 7.6;
 }
 
 Neptune::Neptune(std::string file): Planet(file)
 {
 
-	orbit_radius = 28;
-	m_size = 7;
+	orbit_radius = 300.5;
+	m_size = 388;
+    m_orbitSpeed = 2.2;
 }
 
 Pluto::Pluto(std::string file): Planet(file)
 {
 
-	orbit_radius = 4;
-	m_size = 3;
+	orbit_radius = 394.8;
+	m_size = 18.6;
+    m_orbitSpeed = 1.7;
 }
