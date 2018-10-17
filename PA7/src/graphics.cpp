@@ -112,14 +112,15 @@ bool Graphics::Initialize(int width, int height)
 void Graphics::Update(unsigned int dt)
 {
   // Update the object
+  m_sun->Update(dt);
   for(int i = 0; i < m_sun->m_planets.size(); i++)
   {
     m_sun->m_planets[i]->Update(dt);
-    for (int j = 0; j < m_sun->m_planets[i]->m_moons.size(); j++)
-    {
-      m_sun->m_planets[i]->m_moons[j]->Update(dt);
-    }
   }
+  for (int j = 0; j < m_sun->m_moons.size(); j++)
+    {
+      m_sun->m_moons[j]->Update(dt);
+    }
   // Camera Controls
   //r = reset, n = next planet, else keeps the camera in the same spot, following whatever planet its on.
   //planetIndex: 0 - Sun, 1 - Mercury, ... 9 - Pluto
@@ -171,17 +172,17 @@ void Graphics::Render()
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_sun->GetModel()));
   m_sun->Render();
 
-/*  for(int i = 0; i < m_sun->m_planets.size(); i++)
+  for(int i = 0; i < m_sun->m_planets.size(); i++)
   {
     //m_earth->m_moons[i]->model = glm::scale(glm::vec3(0.1f, 0.1f, 0.1f));
     glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_sun->m_planets[i]->GetModel()));
     m_sun->m_planets[i]->Render();
-    for(int j = 0; j < m_sun->m_planets[i]->m_moons.size(); j++)
-    {
-      glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_sun->m_planets[i]->m_moons[j]->GetModel()));
-      m_sun->m_planets[i]->m_moons[j]->Render();
-    }
-  }*/
+  }
+  for(int j = 0; j < m_sun->m_moons.size(); j++)
+  {
+      glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_sun->m_moons[j]->GetModel()));
+      m_sun->m_moons[j]->Render();
+  }
 
   // Get any errors from OpenGL
   auto error = glGetError();

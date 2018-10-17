@@ -295,19 +295,16 @@ void Sun::Update(unsigned int dt)
     }
     if(spin_direction)
     {
-        angle +=  dt * M_PI/10;
+        angle +=  dt * M_PI/10000;
     }
     else
     {
-        angle -=  dt * M_PI/10;
+        angle -=  dt * M_PI/10000;
     }
     
     for(int i = 0; i < m_moons.size(); i++)
     {
-        m_moons[i]->model = glm::translate(glm::mat4(1.0f),
-                                          glm::vec3(orbit_radius * cos(orbit_angle),
-                                                    0,
-                                                    orbit_radius * sin(orbit_angle)));
+        m_moons[i]->Update(dt);
     }
 
 
@@ -315,10 +312,6 @@ void Sun::Update(unsigned int dt)
     model = glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0, 1.0, 0.0));
     model = glm::scale(model, glm::vec3(m_size/10.0f, m_size/10.0f, m_size/10.0f));
     
-    for(int x = 0;x<m_planets.size();x++)
-    {
-    	m_planets[x]->Update(dt);
-    }
 }
 
 Mercury::Mercury(std::string file): Planet(file)
