@@ -171,7 +171,7 @@ void Graphics::Render()
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_sun->GetModel()));
   m_sun->Render();
 
-  for(int i = 0; i < m_sun->m_planets.size(); i++)
+/*  for(int i = 0; i < m_sun->m_planets.size(); i++)
   {
     //m_earth->m_moons[i]->model = glm::scale(glm::vec3(0.1f, 0.1f, 0.1f));
     glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_sun->m_planets[i]->GetModel()));
@@ -181,7 +181,7 @@ void Graphics::Render()
       glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_sun->m_planets[i]->m_moons[j]->GetModel()));
       m_sun->m_planets[i]->m_moons[j]->Render();
     }
-  }
+  }*/
 
   // Get any errors from OpenGL
   auto error = glGetError();

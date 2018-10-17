@@ -97,22 +97,38 @@ void Engine::Keyboard()
               case SDLK_n:// Move camera to the next planet
                   m_graphics->cameraOption = 'n';
                   break;
-/*
+
               case SDLK_a:// swap false to true and true to false to switch direction on spin
-                  m_graphics->m_earth->spin_direction = !m_graphics->m_earth->spin_direction;
+                  m_graphics->m_sun->spin_direction = !m_graphics->m_sun->spin_direction;
+                  for(int x=0; x<m_graphics->m_sun->m_planets.size();x++)
+                  {
+                  	m_graphics->m_sun->m_planets[x]->spin_direction = !m_graphics->m_sun->m_planets[x]->spin_direction;
+                  }
                   break;
 
               case SDLK_s:// swap false to true and true to false to switch direction on spin
-                  m_graphics->m_earth->orbit_direction = !m_graphics->m_earth->orbit_direction;
+                  m_graphics->m_sun->orbit_direction = !m_graphics->m_sun->orbit_direction;
+                  for(int x=0; x<m_graphics->m_sun->m_planets.size();x++)
+                  {
+                  	m_graphics->m_sun->m_planets[x]->orbit_direction = !m_graphics->m_sun->m_planets[x]->orbit_direction;
+                  }
                   break;
 
               case SDLK_LEFT:
-                m_graphics->m_earth->spin_direction = !m_graphics->m_earth->spin_direction;
+                m_graphics->m_sun->spin_direction = !m_graphics->m_sun->spin_direction;
+                for(int x=0; x<m_graphics->m_sun->m_planets.size();x++)
+                  {
+                  	m_graphics->m_sun->m_planets[x]->spin_direction = !m_graphics->m_sun->m_planets[x]->spin_direction;
+                  }
                 break;
 
               case SDLK_RIGHT:
-                m_graphics->m_earth->orbit_direction = !m_graphics->m_earth->orbit_direction;
-                break;*/
+                m_graphics->m_sun->orbit_direction = !m_graphics->m_sun->orbit_direction;
+                for(int x=0; x<m_graphics->m_sun->m_planets.size();x++)
+                  {
+                  	m_graphics->m_sun->m_planets[x]->orbit_direction = !m_graphics->m_sun->m_planets[x]->orbit_direction;
+                  }
+                break;
           }
 
   }

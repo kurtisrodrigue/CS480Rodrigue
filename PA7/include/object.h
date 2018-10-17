@@ -4,6 +4,7 @@
 #include <vector>
 #include "graphics_headers.h"
 class Planet;
+class Moon;
 
 class Object
 {
@@ -15,6 +16,7 @@ class Object
     ~Object();
     virtual void Update(unsigned int dt);
     virtual void Render();
+    void ChangeDirection();
     glm::mat4 Scale();
 
     glm::mat4 GetModel();
@@ -55,12 +57,14 @@ public:
 	virtual void Update(unsigned int dt);
 	void refactorOrbits();
 	std::vector<Planet*> m_planets;
+	std::vector<Moon*> m_moons;
 };
 
 class Moon : public Object
 {
 public:
     friend class Planet;
+    friend class Sun;
     Moon(Planet*);
     virtual void Update(unsigned int dt);
     virtual void Render();
@@ -77,7 +81,6 @@ public:
 
     Planet(std::string);
     virtual void Update(unsigned int dt);
-    std::vector<Moon*> m_moons;
 
 };
 
