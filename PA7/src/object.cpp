@@ -42,10 +42,14 @@ Object::~Object()
   Indices.clear();
 }
 
-Moon::Moon(Planet* control) : Object("../assets/8k_mercury.jpg")
+Moon::Moon(Planet* control, int m) : Object("../assets/8k_mercury.jpg")
 {
+    float x = (float) (rand()%10)+1;
     m_planet = control;
-    orbit_radius = 3;
+    m_size = m_planet->m_size/(1000*(x+4));
+    moon_number = m;
+    orbit_radius = m_planet->m_size/25 + (moon_number*2);
+    orbit_angle = moon_number*(50*x/2);
 }
 
 Planet::Planet(std::string file) : Object(file)
@@ -133,11 +137,11 @@ void Moon::Update(unsigned int dt)
     glm::mat4 temp_model(m_planet->model);
     if(orbit_direction)
     {
-        orbit_angle += dt * M_PI/357;
+        orbit_angle += dt * M_PI/5000;//357
     }
     else
     {
-        orbit_angle -= dt * M_PI/357;
+        orbit_angle -= dt * M_PI/5000;
     }
     if(spin_direction)
     {
@@ -150,9 +154,9 @@ void Moon::Update(unsigned int dt)
 
 
     model = glm::translate(glm::mat4(1.0f), glm::vec3(m_planet->orbit_radius * cos(m_planet->orbit_angle),0,m_planet->orbit_radius * sin(m_planet->orbit_angle)));
-    model = glm::translate(model, glm::vec3(orbit_radius * cos(orbit_angle),0,orbit_radius * sin(orbit_angle)));
-    model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0, 1.0, 0.0));
-    model = glm::scale(model, glm::vec3(0.4f, 0.4f, 0.4f));
+    model = glm::translate(model, glm::vec3(orbit_radius * cos(orbit_angle)/10,0,orbit_radius * sin(orbit_angle)/10));
+   model = glm::rotate(model, glm::radians(angle), glm::vec3(0.0, m_size*5, 0.0));
+    model = glm::scale(model, glm::vec3(m_size,m_size,m_size));
 
     if(orbit_angle > 360)
     {
@@ -259,7 +263,13 @@ Sun::Sun(std::string file) : Object(file)
     m_planets.push_back(new Neptune("../assets/2k_neptune.jpg"));
     m_planets.push_back(new Pluto("../assets/pluto_texture.jpg"));
     
-    m_moons.push_back(new Moon(m_planets[2]));
+    m_moons.push_back(new Moon(m_planets[2],0));
+    m_moons.push_back(new Moon(m_planets[3],0));
+    m_moons.push_back(new Moon(m_planets[3],1));
+    for(int x = 0; x<10;x++)
+    {
+    	m_moons.push_back(new Moon(m_planets[4],x));
+    }
 }
 
 void Sun::refactorOrbits()

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 #define GLM_ENABLE_EXPERIMENTAL
 #define GL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED

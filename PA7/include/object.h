@@ -65,10 +65,12 @@ class Moon : public Object
 public:
     friend class Planet;
     friend class Sun;
-    Moon(Planet*);
+    Moon(Planet*, int);
     virtual void Update(unsigned int dt);
     virtual void Render();
     Planet* m_planet;
+    float m_size;
+    int moon_number;
 };
 
 class Planet : public Object
