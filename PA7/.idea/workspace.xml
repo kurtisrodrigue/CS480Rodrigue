@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
-      <config projectName="Tutorial" targetName="Tutorial_SUCCESSFUL" />
       <config projectName="Tutorial" targetName="Tutorial" />
+      <config projectName="Tutorial" targetName="Tutorial_SUCCESSFUL" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -13,12 +13,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9771683-28b1-4def-b612-3978bf23c028" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/rings.mtl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/rings.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/Tutorial" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeRuleHashes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/camera.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/camera.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/engine.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/engine.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/graphics.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/graphics.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/object.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/object.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Tutorial" beforeDir="false" afterPath="$PROJECT_DIR$/build/Tutorial" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/shader.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/shader.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/window.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial.dir/src/window.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial_SUCCESSFUL.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial_SUCCESSFUL.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial_SUCCESSFUL.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial_SUCCESSFUL.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Tutorial_SUCCESSFUL.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Tutorial_SUCCESSFUL.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.c" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.cxx" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/camera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/camera.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object.cpp" afterDir="false" />
     </list>
@@ -141,57 +173,61 @@
     <session id="837701699">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.4" value="3" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.4" value="4" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cpp" value="7" />
-          <entry key="h" value="4" />
+          <entry key="cpp" value="12" />
+          <entry key="h" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="11" />
+          <entry key="ObjectiveC" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="2257" />
-          <entry key="h" value="625" />
+          <entry key="cpp" value="3281" />
+          <entry key="h" value="868" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="2882" />
+          <entry key="ObjectiveC" value="4149" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.cidr.testingFrameworks.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5440451">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/object.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="535">
-                  <caret line="278" column="24" selection-start-line="278" selection-start-column="24" selection-end-line="278" selection-end-column="24" />
+                <state relative-caret-position="628">
+                  <caret line="317" column="48" selection-start-line="317" selection-start-column="48" selection-end-line="317" selection-end-column="48" />
+                  <folding>
+                    <element signature="e#1444#2252#0" />
+                    <element signature="e#4849#6157#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/shader.cpp">
+            <entry file="file://$PROJECT_DIR$/src/camera.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-963">
-                  <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+                <state relative-caret-position="615">
+                  <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
                 </state>
               </provider>
             </entry>
@@ -199,20 +235,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/engine.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="981">
-                  <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/graphics.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-278">
-                  <caret line="91" column="17" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="17" />
-                  <folding>
-                    <element signature="e#206#634#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="372">
+                  <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
                 </state>
               </provider>
             </entry>
@@ -220,30 +244,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/include/object.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="454">
-                  <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/include/graphics_headers.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/include/graphics.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+                <state relative-caret-position="525">
+                  <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
                 </state>
               </provider>
             </entry>
@@ -259,11 +265,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/shaders/shader.frag" />
-        <option value="$PROJECT_DIR$/src/camera.cpp" />
         <option value="$PROJECT_DIR$/include/graphics.h" />
-        <option value="$PROJECT_DIR$/src/graphics.cpp" />
         <option value="$PROJECT_DIR$/src/shader.cpp" />
         <option value="$PROJECT_DIR$/include/graphics_headers.h" />
+        <option value="$PROJECT_DIR$/src/graphics.cpp" />
+        <option value="$PROJECT_DIR$/src/camera.cpp" />
         <option value="$PROJECT_DIR$/include/object.h" />
         <option value="$PROJECT_DIR$/src/engine.cpp" />
         <option value="$PROJECT_DIR$/src/object.cpp" />
@@ -288,6 +294,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -314,7 +321,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -389,18 +395,20 @@
       <workItem from="1539618555789" duration="715000" />
       <workItem from="1539619610732" duration="295000" />
       <workItem from="1539639001719" duration="1109000" />
-      <workItem from="1539726469365" duration="4078000" />
+      <workItem from="1539726469365" duration="4225000" />
+      <workItem from="1539754904354" duration="183000" />
+      <workItem from="1539755301364" duration="6142000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36202000" />
+    <option name="totallyTimeSpent" value="42674000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13369964" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13614164" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -448,17 +456,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/include/object.h</url>
-          <line>94</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file:///usr/include/glm/gtc/matrix_transform.inl" />
@@ -508,63 +505,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shader.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-963">
+        <state relative-caret-position="585">
           <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/graphics_headers.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/graphics.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/window.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-59" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/object.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphics.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-278">
-          <caret line="91" column="17" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="17" />
+        <state relative-caret-position="2235">
+          <caret line="149" column="67" selection-start-line="149" selection-start-column="67" selection-end-line="149" selection-end-column="67" />
           <folding>
             <element signature="e#206#634#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/graphics.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/graphics_headers.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/camera.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/window.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/object.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="615">
+          <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="981">
-          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+        <state relative-caret-position="372">
+          <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/object.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="278" column="24" selection-start-line="278" selection-start-column="24" selection-end-line="278" selection-end-column="24" />
+        <state relative-caret-position="628">
+          <caret line="317" column="48" selection-start-line="317" selection-start-column="48" selection-end-line="317" selection-end-column="48" />
+          <folding>
+            <element signature="e#1444#2252#0" />
+            <element signature="e#4849#6157#0" />
+          </folding>
         </state>
       </provider>
     </entry>

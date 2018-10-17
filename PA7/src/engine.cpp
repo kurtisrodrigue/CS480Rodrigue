@@ -91,6 +91,12 @@ void Engine::Keyboard()
           	case SDLK_m:
           		m_graphics->m_sun->refactorOrbits();
           		break;
+              case SDLK_UP:
+                  m_graphics->m_sun->simulationSpeed += 0.1;
+                  break;
+              case SDLK_DOWN:
+                  m_graphics->m_sun->simulationSpeed -= 0.1;
+                  break;
               case SDLK_r:// Reset camera position to the sun
                   m_graphics->cameraOption = 'r';
                   break;

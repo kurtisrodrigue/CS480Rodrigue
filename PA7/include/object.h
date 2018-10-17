@@ -10,9 +10,11 @@ class Object
 {
     friend class Engine;
     friend class Graphics;
+    friend class Rings;
   public:
     Object();
     Object(std::string);
+    Object(std::string, std::string);
     ~Object();
     virtual void Update(unsigned int dt);
     virtual void Render();
@@ -21,7 +23,7 @@ class Object
 
     glm::mat4 GetModel();
     
-    void LoadOBJ(const char* obj);
+    void LoadOBJ(const char* obj, const char* tex);
 
 
   protected:
@@ -43,6 +45,8 @@ class Object
     bool orbit_direction;
     bool spin_direction;
 
+	double m_orbitSpeed;
+
     double m_size;
 
 
@@ -58,6 +62,7 @@ public:
 	void refactorOrbits();
 	std::vector<Planet*> m_planets;
 	std::vector<Moon*> m_moons;
+	float simulationSpeed;
 };
 
 class Moon : public Object
@@ -66,6 +71,7 @@ public:
     friend class Planet;
     friend class Sun;
     Moon(Planet*, int);
+    Moon(Planet*, int, std::string, std::string);
     virtual void Update(unsigned int dt);
     virtual void Render();
     Planet* m_planet;
@@ -73,14 +79,21 @@ public:
     int moon_number;
 };
 
+class Rings : public Moon
+{
+public:
+	Rings(Planet*, int);
+	virtual void Update(unsigned int dt);
+};
+
 class Planet : public Object
 {
 public:
-	double m_orbitSpeed;
 
     friend class Moon;
     friend class Sun;
 
+	Sun* m_sun;
     Planet(std::string);
     virtual void Update(unsigned int dt);
 

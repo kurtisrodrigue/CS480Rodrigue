@@ -1,40 +1,25 @@
 #include "object.h"
 
+Object::Object()
+{
+    //hello
+}
+
 Object::Object(std::string file)
 {
     orbit_direction = 1;
     spin_direction = 1;
-
-    LoadOBJ("../assets/sphere.obj");
-
-    Magick::Image *image;
-    image = new Magick::Image(file);
-    image->write(&m_blob, "RGBA");
-
-
-
-  angle = 0.0f;
-  orbit_angle = 0.0f;
-
-  glGenBuffers(1, &VB);
-  glBindBuffer(GL_ARRAY_BUFFER, VB);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * Vertices.size(), &Vertices[0], GL_STATIC_DRAW);
-
-  glGenBuffers(1, &IB);
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * Indices.size(), &Indices[0], GL_STATIC_DRAW);
-  
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->columns(), image->rows(), 0, GL_RGBA, GL_UNSIGNED_BYTE, m_blob.data());
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glBindTexture(GL_TEXTURE_2D, 0);
-    delete image;
-    
-
-
+    //texture_file = file;
+    LoadOBJ("../assets/sphere.obj", file.c_str());
 }
+
+Object::Object(std::string obj, std::string tex)
+{
+    orbit_direction = 1;
+    spin_direction = 1;
+    LoadOBJ(obj.c_str(), tex.c_str());
+}
+
 
 Object::~Object()
 {
@@ -42,15 +27,34 @@ Object::~Object()
   Indices.clear();
 }
 
+// moon constructor for non-rings
 Moon::Moon(Planet* control, int m) : Object("../assets/8k_mercury.jpg")
 {
     float x = (float) (rand()%10)+1;
+    m_orbitSpeed = sqrt(x) / 2;
     m_planet = control;
     m_size = m_planet->m_size/(1000*(x+4));
+    moon_number = m;
+    orbit_radius = m_planet->m_size/30 + (moon_number*3);
+    orbit_angle = moon_number*(50*x/2);
+}
+
+// pretty much the ring moon constructor
+Moon::Moon(Planet* control, int m, std::string obj, std::string tex) : Object(obj,tex)
+{
+    float x = (float) (rand()%10)+1;
+    m_planet = control;
+    m_size = m_planet->m_size / 400;
     moon_number = m;
     orbit_radius = m_planet->m_size/25 + (moon_number*2);
     orbit_angle = moon_number*(50*x/2);
 }
+
+Rings::Rings(Planet* control, int m) : Moon(control, m, "../assets/rings.obj", "../assets/ringtextures.png")
+{
+    //m_size = control->m_size * 2;
+}
+
 
 Planet::Planet(std::string file) : Object(file)
 {
@@ -137,19 +141,19 @@ void Moon::Update(unsigned int dt)
     glm::mat4 temp_model(m_planet->model);
     if(orbit_direction)
     {
-        orbit_angle += dt * M_PI/5000;//357
+        orbit_angle += m_planet->m_sun->simulationSpeed * m_orbitSpeed * dt * M_PI/5000;//357
     }
     else
     {
-        orbit_angle -= dt * M_PI/5000;
+        orbit_angle -= m_planet->m_sun->simulationSpeed * m_orbitSpeed * dt * M_PI/5000;
     }
     if(spin_direction)
     {
-        angle +=  dt * M_PI/500;
+        angle +=  m_planet->m_sun->simulationSpeed * dt * M_PI/500;
     }
     else
     {
-        angle -=  dt * M_PI/500;
+        angle -=  m_planet->m_sun->simulationSpeed * dt * M_PI/500;
     }
 
 
@@ -168,6 +172,13 @@ void Moon::Update(unsigned int dt)
     }
 }
 
+void Rings::Update(unsigned int dt)
+{
+    model = glm::translate(glm::mat4(1.0f), glm::vec3(m_planet->orbit_radius * cos(m_planet->orbit_angle),0,m_planet->orbit_radius * sin(m_planet->orbit_angle)));
+    model = glm::scale(model, glm::vec3(m_size,m_size,m_size));
+
+}
+
 void Moon::Render()
 {
     Object::Render();
@@ -177,27 +188,25 @@ void Planet::Update(unsigned int dt)
 {
     if(orbit_direction)
     {
-        orbit_angle += m_orbitSpeed * dt * M_PI/15000;
+        orbit_angle += m_sun->simulationSpeed * m_orbitSpeed * dt * M_PI/15000;
     }
     else
     {
-        orbit_angle -= m_orbitSpeed * dt * M_PI/15000;
+        orbit_angle -= m_sun->simulationSpeed * m_orbitSpeed * dt * M_PI/15000;
     }
     if(spin_direction)
     {
-        angle +=  dt * M_PI/7000;
+        angle +=  m_sun->simulationSpeed * dt * M_PI/7000;
     }
     else
     {
-        angle -=  dt * M_PI/7000;
+        angle -=  m_sun->simulationSpeed * dt * M_PI/7000;
     }
 
     model = glm::translate(glm::mat4(1.0f),
             glm::vec3(orbit_radius * cos(orbit_angle),
                     0,
                     orbit_radius * sin(orbit_angle)));
-
-
     model = glm::rotate(model, angle, glm::vec3(0.0, 1.0, 0.0));
     model = glm::scale(model, glm::vec3(m_size/750.0f, m_size/750.0f, m_size/750.0f));
 
@@ -212,7 +221,7 @@ void Planet::Update(unsigned int dt)
     }
 }
 
-void Object::LoadOBJ(const char* obj)
+void Object::LoadOBJ(const char* obj, const char* tex)
 {
     Assimp::Importer importer;
     std::ifstream fin(obj);
@@ -246,12 +255,38 @@ void Object::LoadOBJ(const char* obj)
 
         }
     }
+
+    Magick::Image *image;
+    image = new Magick::Image(tex);
+    image->write(&m_blob, "RGBA");
+
+
+
+    angle = 0.0f;
+    orbit_angle = 0.0f;
+
+    glGenBuffers(1, &VB);
+    glBindBuffer(GL_ARRAY_BUFFER, VB);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * Vertices.size(), &Vertices[0], GL_STATIC_DRAW);
+
+    glGenBuffers(1, &IB);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * Indices.size(), &Indices[0], GL_STATIC_DRAW);
+
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->columns(), image->rows(), 0, GL_RGBA, GL_UNSIGNED_BYTE, m_blob.data());
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glBindTexture(GL_TEXTURE_2D, 0);
+    delete image;
 }
 
 Sun::Sun(std::string file) : Object(file)
 {
     orbit_radius = 0;
     m_size = 15;
+    simulationSpeed = 1;
 
     m_planets.push_back(new Mercury("../assets/8k_mercury.jpg"));
     m_planets.push_back(new Venus("../assets/8k_venus_surface.jpg"));
@@ -262,14 +297,27 @@ Sun::Sun(std::string file) : Object(file)
     m_planets.push_back(new Uranus("../assets/2k_uranus.jpg"));
     m_planets.push_back(new Neptune("../assets/2k_neptune.jpg"));
     m_planets.push_back(new Pluto("../assets/pluto_texture.jpg"));
+    for(int i = 0; i < m_planets.size(); i++)
+    {
+        m_planets[i]->m_sun = this;
+    }
     
     m_moons.push_back(new Moon(m_planets[2],0));
     m_moons.push_back(new Moon(m_planets[3],0));
     m_moons.push_back(new Moon(m_planets[3],1));
-    for(int x = 0; x<10;x++)
+    for(int x = 0; x<4;x++)
     {
     	m_moons.push_back(new Moon(m_planets[4],x));
     }
+    m_moons.push_back(new Rings(m_planets[5],0));
+    m_moons.push_back(new Moon(m_planets[5],1));
+    m_moons.push_back(new Moon(m_planets[5],2));
+    m_moons.push_back(new Moon(m_planets[6],0));
+    m_moons.push_back(new Moon(m_planets[6],1));
+    m_moons.push_back(new Moon(m_planets[7],0));
+    m_moons.push_back(new Moon(m_planets[8],0));
+
+
 }
 
 void Sun::refactorOrbits()
@@ -297,27 +345,25 @@ void Sun::Update(unsigned int dt)
 {
     if(orbit_direction)
     {
-        orbit_angle += dt * M_PI/1000;
+        orbit_angle += simulationSpeed * dt * M_PI/1000;
     }
     else
     {
-        orbit_angle -= dt * M_PI/1000;
+        orbit_angle -= simulationSpeed * dt * M_PI/1000;
     }
     if(spin_direction)
     {
-        angle +=  dt * M_PI/10000;
+        angle +=  simulationSpeed * dt * M_PI/100000;
     }
     else
     {
-        angle -=  dt * M_PI/10000;
+        angle -=  simulationSpeed * dt * M_PI/100000;
     }
     
     for(int i = 0; i < m_moons.size(); i++)
     {
         m_moons[i]->Update(dt);
     }
-
-
 
     model = glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0, 1.0, 0.0));
     model = glm::scale(model, glm::vec3(m_size/10.0f, m_size/10.0f, m_size/10.0f));
@@ -361,7 +407,7 @@ Jupiter::Jupiter(std::string file): Planet(file)
 
 	orbit_radius = 50.2;
 	m_size = 1121;
-    m_orbitSpeed = 5.5;
+    m_orbitSpeed = 0.3;
 }
 
 Saturn::Saturn(std::string file): Planet(file)
@@ -369,7 +415,7 @@ Saturn::Saturn(std::string file): Planet(file)
 
 	orbit_radius = 95.8;
 	m_size = 945;
-    m_orbitSpeed = 3.4;
+    m_orbitSpeed = 0.2;
 }
 
 Uranus::Uranus(std::string file): Planet(file)
@@ -377,7 +423,7 @@ Uranus::Uranus(std::string file): Planet(file)
 
 	orbit_radius = 192;
 	m_size = 401;
-    m_orbitSpeed = 7.6;
+    m_orbitSpeed = 0.1;
 }
 
 Neptune::Neptune(std::string file): Planet(file)
@@ -385,7 +431,7 @@ Neptune::Neptune(std::string file): Planet(file)
 
 	orbit_radius = 300.5;
 	m_size = 388;
-    m_orbitSpeed = 2.2;
+    m_orbitSpeed = 0.07;
 }
 
 Pluto::Pluto(std::string file): Planet(file)
@@ -393,5 +439,5 @@ Pluto::Pluto(std::string file): Planet(file)
 
 	orbit_radius = 394.8;
 	m_size = 18.6;
-    m_orbitSpeed = 1.7;
+    m_orbitSpeed = 0.08;
 }

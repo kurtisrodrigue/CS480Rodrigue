@@ -1,4 +1,4 @@
-# PA5: Assimp Model Loading
+# PA7: Solar System
 
 # Team Members:
 
@@ -40,18 +40,20 @@ sudo apt-get install imagemagick
 
 
 ## Controls
+### Planets
 Reverse spin direction: A
 
 Reverse orbit direction: S
 
-Camera
+Change simulation speed: UP/DOWN arrow keys
 
-Reset to Sun - r
-Move to next planet - n
+Toggle System Scale: M
 
-## To Change The Model
-To change the model, type in the name of the obj file you would like to load.
-Example: "dragon.obj"
+### Camera
+
+Reset to Sun: R
+
+Move to next planet: N
 
 
 ### Makefile Instructions 
@@ -62,5 +64,5 @@ mkdir build
 cd build
 cmake ..
 make
-./Tutorial
+./SolarSystem
 ```
