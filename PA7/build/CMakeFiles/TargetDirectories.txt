@@ -1,4 +1,4 @@
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/build/CMakeFiles/edit_cache.dir
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial_SUCCESSFUL.dir
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/build/CMakeFiles/rebuild_cache.dir
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir
+/home/jeffreyw/CS480Rodrigue/PA7/build/CMakeFiles/edit_cache.dir
+/home/jeffreyw/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial_SUCCESSFUL.dir
+/home/jeffreyw/CS480Rodrigue/PA7/build/CMakeFiles/rebuild_cache.dir
+/home/jeffreyw/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir

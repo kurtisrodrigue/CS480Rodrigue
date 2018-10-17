@@ -4,7 +4,7 @@
 CMakeFiles/Tutorial.dir/src/camera.cpp.o
  ../include/camera.h
  ../include/graphics_headers.h
- /home/jeffreyw/Documents/CS480Rodrigue/PA7/src/camera.cpp
+ /home/jeffreyw/CS480Rodrigue/PA7/src/camera.cpp
  /usr/include/ImageMagick-6/Magick++.h
  /usr/include/ImageMagick-6/Magick++/Blob.h
  /usr/include/ImageMagick-6/Magick++/ChannelMoments.h
@@ -142,7 +142,7 @@ CMakeFiles/Tutorial.dir/src/engine.cpp.o
  ../include/object.h
  ../include/shader.h
  ../include/window.h
- /home/jeffreyw/Documents/CS480Rodrigue/PA7/src/engine.cpp
+ /home/jeffreyw/CS480Rodrigue/PA7/src/engine.cpp
  /usr/include/ImageMagick-6/Magick++.h
  /usr/include/ImageMagick-6/Magick++/Blob.h
  /usr/include/ImageMagick-6/Magick++/ChannelMoments.h
@@ -278,7 +278,7 @@ CMakeFiles/Tutorial.dir/src/graphics.cpp.o
  ../include/graphics_headers.h
  ../include/object.h
  ../include/shader.h
- /home/jeffreyw/Documents/CS480Rodrigue/PA7/src/graphics.cpp
+ /home/jeffreyw/CS480Rodrigue/PA7/src/graphics.cpp
  /usr/include/ImageMagick-6/Magick++.h
  /usr/include/ImageMagick-6/Magick++/Blob.h
  /usr/include/ImageMagick-6/Magick++/ChannelMoments.h
@@ -416,7 +416,7 @@ CMakeFiles/Tutorial.dir/src/main.cpp.o
  ../include/object.h
  ../include/shader.h
  ../include/window.h
- /home/jeffreyw/Documents/CS480Rodrigue/PA7/src/main.cpp
+ /home/jeffreyw/CS480Rodrigue/PA7/src/main.cpp
  /usr/include/ImageMagick-6/Magick++.h
  /usr/include/ImageMagick-6/Magick++/Blob.h
  /usr/include/ImageMagick-6/Magick++/ChannelMoments.h
@@ -549,7 +549,7 @@ CMakeFiles/Tutorial.dir/src/main.cpp.o
 CMakeFiles/Tutorial.dir/src/object.cpp.o
  ../include/graphics_headers.h
  ../include/object.h
- /home/jeffreyw/Documents/CS480Rodrigue/PA7/src/object.cpp
+ /home/jeffreyw/CS480Rodrigue/PA7/src/object.cpp
  /usr/include/ImageMagick-6/Magick++.h
  /usr/include/ImageMagick-6/Magick++/Blob.h
  /usr/include/ImageMagick-6/Magick++/ChannelMoments.h
@@ -682,7 +682,7 @@ CMakeFiles/Tutorial.dir/src/object.cpp.o
 CMakeFiles/Tutorial.dir/src/shader.cpp.o
  ../include/graphics_headers.h
  ../include/shader.h
- /home/jeffreyw/Documents/CS480Rodrigue/PA7/src/shader.cpp
+ /home/jeffreyw/CS480Rodrigue/PA7/src/shader.cpp
  /usr/include/ImageMagick-6/Magick++.h
  /usr/include/ImageMagick-6/Magick++/Blob.h
  /usr/include/ImageMagick-6/Magick++/ChannelMoments.h
@@ -814,4 +814,4 @@ CMakeFiles/Tutorial.dir/src/shader.cpp.o
  /usr/include/x86_64-linux-gnu/ImageMagick-6/magick/magick-baseconfig.h
 CMakeFiles/Tutorial.dir/src/window.cpp.o
  ../include/window.h
- /home/jeffreyw/Documents/CS480Rodrigue/PA7/src/window.cpp
+ /home/jeffreyw/CS480Rodrigue/PA7/src/window.cpp

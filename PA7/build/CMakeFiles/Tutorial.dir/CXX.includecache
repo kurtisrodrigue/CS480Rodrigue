@@ -80,33 +80,33 @@ SDL2/SDL.h
 string
 -
 
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/camera.cpp
+/home/jeffreyw/CS480Rodrigue/PA7/src/camera.cpp
 camera.h
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/camera.h
+/home/jeffreyw/CS480Rodrigue/PA7/src/camera.h
 
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/engine.cpp
+/home/jeffreyw/CS480Rodrigue/PA7/src/engine.cpp
 engine.h
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/engine.h
+/home/jeffreyw/CS480Rodrigue/PA7/src/engine.h
 
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/graphics.cpp
+/home/jeffreyw/CS480Rodrigue/PA7/src/graphics.cpp
 graphics.h
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/graphics.h
+/home/jeffreyw/CS480Rodrigue/PA7/src/graphics.h
 
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/main.cpp
+/home/jeffreyw/CS480Rodrigue/PA7/src/main.cpp
 iostream
 -
 engine.h
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/engine.h
+/home/jeffreyw/CS480Rodrigue/PA7/src/engine.h
 
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/object.cpp
+/home/jeffreyw/CS480Rodrigue/PA7/src/object.cpp
 object.h
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/object.h
+/home/jeffreyw/CS480Rodrigue/PA7/src/object.h
 
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/shader.cpp
+/home/jeffreyw/CS480Rodrigue/PA7/src/shader.cpp
 shader.h
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/shader.h
+/home/jeffreyw/CS480Rodrigue/PA7/src/shader.h
 
-/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/window.cpp
+/home/jeffreyw/CS480Rodrigue/PA7/src/window.cpp
 window.h
 -
 
