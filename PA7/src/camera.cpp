@@ -16,7 +16,7 @@ bool Camera::Initialize(int w, int h)
   //  if you will be having a moving camera the view matrix will need to more dynamic
   //  ...Like you should update it before you render more dynamic 
   //  for this project having them static will be fine
-  view = glm::lookAt( glm::vec3(0.0, 8.0, -22.0), //Eye Position
+  view = glm::lookAt( glm::vec3(0.0, 8.0, -15.0), //Eye Position
                       glm::vec3(0.0, 0.0, 0.0), //Focus point
                       glm::vec3(0.0, 1.0, 0.0)); //Positive Y is up
 
@@ -25,6 +25,18 @@ bool Camera::Initialize(int w, int h)
                                  0.01f, //Distance to the near plane, normally a small value like this
                                  100.0f); //Distance to the far plane, 
   return true;
+}
+
+void Camera::Update(glm::vec3 eyePosition, int planetIndex)
+{
+  if(planetIndex == 0 || planetIndex == 5 || planetIndex == 6 || planetIndex == 7 || planetIndex == 8)
+    view = glm::lookAt( eyePosition + glm::vec3(0.0, 8.0, -15.0), //Eye Position
+                      eyePosition, //Focus point
+                      glm::vec3(0.0, 1.0, 0.0)); //Positive Y is up
+  else
+    view = glm::lookAt( eyePosition + glm::vec3(0.0, 0.5, -1.0), //Eye Position
+                      eyePosition, //Focus point
+                      glm::vec3(0.0, 1.0, 0.0)); //Positive Y is up
 }
 
 glm::mat4 Camera::GetProjection()

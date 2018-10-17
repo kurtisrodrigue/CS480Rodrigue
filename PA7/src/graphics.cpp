@@ -43,6 +43,8 @@ bool Graphics::Initialize(int width, int height)
     printf("Camera Failed to Initialize\n");
     return false;
   }
+  cameraOption = 's';
+  planetIndex = 0;
 
   // Create the object
   m_sun = new Sun("../assets/8k_sun.jpg");
@@ -118,6 +120,38 @@ void Graphics::Update(unsigned int dt)
       m_sun->m_planets[i]->m_moons[j]->Update(dt);
     }
   }
+  // Camera Controls
+  //r = reset, n = next planet, else keeps the camera in the same spot, following whatever planet its on.
+  //planetIndex: 0 - Sun, 1 - Mercury, ... 9 - Pluto
+  if(cameraOption == 'r')
+  {
+    m_camera->Update(glm::vec3(0.0, 0.0, 0.0), 0);
+    planetIndex = 0;
+  }
+  else if(cameraOption == 'n')
+  {
+    if(planetIndex < 9)
+    {
+      planetIndex++;
+      glm::mat4 planetModel = m_sun->m_planets[planetIndex - 1]->GetModel();
+      m_camera->Update(glm::vec3(planetModel[3][0], planetModel[3][1], planetModel[3][2]), planetIndex);
+    }
+    else
+    {
+      planetIndex = 0;
+      m_camera->Update(glm::vec3(0.0, 0.0, 0.0), 0);
+    }    
+  }
+  else
+  {
+    if(planetIndex != 0)
+    {
+    glm::mat4 planetModel = m_sun->m_planets[planetIndex - 1]->GetModel();
+    m_camera->Update(glm::vec3(planetModel[3][0], planetModel[3][1], planetModel[3][2]), planetIndex);
+    }
+  }
+  cameraOption = 's';
+
 }
 
 void Graphics::Render()

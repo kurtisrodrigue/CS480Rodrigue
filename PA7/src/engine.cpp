@@ -91,6 +91,12 @@ void Engine::Keyboard()
           	case SDLK_m:
           		m_graphics->m_sun->refactorOrbits();
           		break;
+              case SDLK_r:// Reset camera position to the sun
+                  m_graphics->cameraOption = 'r';
+                  break;
+              case SDLK_n:// Move camera to the next planet
+                  m_graphics->cameraOption = 'n';
+                  break;
 /*
               case SDLK_a:// swap false to true and true to false to switch direction on spin
                   m_graphics->m_earth->spin_direction = !m_graphics->m_earth->spin_direction;

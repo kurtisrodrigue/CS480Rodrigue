@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/src/camera.cpp" "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/camera.cpp.o"
-  "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/src/engine.cpp" "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/engine.cpp.o"
-  "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/src/graphics.cpp" "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/graphics.cpp.o"
-  "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/src/main.cpp" "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/main.cpp.o"
-  "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/src/object.cpp" "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/object.cpp.o"
-  "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/src/shader.cpp" "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/shader.cpp.o"
-  "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/src/window.cpp" "/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/window.cpp.o"
+  "/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/camera.cpp" "/home/jeffreyw/Documents/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/camera.cpp.o"
+  "/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/engine.cpp" "/home/jeffreyw/Documents/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/engine.cpp.o"
+  "/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/graphics.cpp" "/home/jeffreyw/Documents/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/graphics.cpp.o"
+  "/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/main.cpp" "/home/jeffreyw/Documents/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/main.cpp.o"
+  "/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/object.cpp" "/home/jeffreyw/Documents/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/object.cpp.o"
+  "/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/shader.cpp" "/home/jeffreyw/Documents/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/shader.cpp.o"
+  "/home/jeffreyw/Documents/CS480Rodrigue/PA7/src/window.cpp" "/home/jeffreyw/Documents/CS480Rodrigue/PA7/build/CMakeFiles/Tutorial.dir/src/window.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "Clang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
@@ -23,8 +23,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   "/usr/local/include/SDL2"
-  "/usr/local/include"
-  "/usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7"
+  "/usr/include/ImageMagick-6"
+  "/usr/include/x86_64-linux-gnu/ImageMagick-6"
+  "/usr/lib/include"
   )
 
 # Targets to which this target links.

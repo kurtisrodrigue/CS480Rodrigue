@@ -19,6 +19,9 @@ class Graphics
     void Update(unsigned int dt);
     void Render();
 
+    char cameraOption;
+    int planetIndex;
+
   private:
     std::string ErrorString(GLenum error);
 

@@ -44,6 +44,11 @@ Reverse spin direction: A
 
 Reverse orbit direction: S
 
+Camera
+
+Reset to Sun - r
+Move to next planet - n
+
 ## To Change The Model
 To change the model, type in the name of the obj file you would like to load.
 Example: "dragon.obj"
