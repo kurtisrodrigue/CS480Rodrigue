@@ -60,6 +60,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Tutorial_SUCCESSFUL.dir/DependInfo.cmake"
-  "CMakeFiles/Tutorial.dir/DependInfo.cmake"
+  "CMakeFiles/SolarSystem_SUCCESSFUL.dir/DependInfo.cmake"
+  "CMakeFiles/SolarSystem.dir/DependInfo.cmake"
   )

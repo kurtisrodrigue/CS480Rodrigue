@@ -65,76 +65,76 @@ CMAKE_SOURCE_DIR = /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7
 CMAKE_BINARY_DIR = /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/Tutorial_SUCCESSFUL.dir
+# Target rules for target CMakeFiles/SolarSystem_SUCCESSFUL.dir
 
 # All Build rule for target.
-CMakeFiles/Tutorial_SUCCESSFUL.dir/all: CMakeFiles/Tutorial.dir/all
-	$(MAKE) -f CMakeFiles/Tutorial_SUCCESSFUL.dir/build.make CMakeFiles/Tutorial_SUCCESSFUL.dir/depend
-	$(MAKE) -f CMakeFiles/Tutorial_SUCCESSFUL.dir/build.make CMakeFiles/Tutorial_SUCCESSFUL.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/cmake-build-debug/CMakeFiles --progress-num= "Built target Tutorial_SUCCESSFUL"
-.PHONY : CMakeFiles/Tutorial_SUCCESSFUL.dir/all
+CMakeFiles/SolarSystem_SUCCESSFUL.dir/all: CMakeFiles/SolarSystem.dir/all
+	$(MAKE) -f CMakeFiles/SolarSystem_SUCCESSFUL.dir/build.make CMakeFiles/SolarSystem_SUCCESSFUL.dir/depend
+	$(MAKE) -f CMakeFiles/SolarSystem_SUCCESSFUL.dir/build.make CMakeFiles/SolarSystem_SUCCESSFUL.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/cmake-build-debug/CMakeFiles --progress-num= "Built target SolarSystem_SUCCESSFUL"
+.PHONY : CMakeFiles/SolarSystem_SUCCESSFUL.dir/all
 
 # Include target in all.
-all: CMakeFiles/Tutorial_SUCCESSFUL.dir/all
+all: CMakeFiles/SolarSystem_SUCCESSFUL.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Tutorial_SUCCESSFUL.dir/rule: cmake_check_build_system
+CMakeFiles/SolarSystem_SUCCESSFUL.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/cmake-build-debug/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Tutorial_SUCCESSFUL.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SolarSystem_SUCCESSFUL.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Tutorial_SUCCESSFUL.dir/rule
+.PHONY : CMakeFiles/SolarSystem_SUCCESSFUL.dir/rule
 
 # Convenience name for target.
-Tutorial_SUCCESSFUL: CMakeFiles/Tutorial_SUCCESSFUL.dir/rule
+SolarSystem_SUCCESSFUL: CMakeFiles/SolarSystem_SUCCESSFUL.dir/rule
 
-.PHONY : Tutorial_SUCCESSFUL
-
-# clean rule for target.
-CMakeFiles/Tutorial_SUCCESSFUL.dir/clean:
-	$(MAKE) -f CMakeFiles/Tutorial_SUCCESSFUL.dir/build.make CMakeFiles/Tutorial_SUCCESSFUL.dir/clean
-.PHONY : CMakeFiles/Tutorial_SUCCESSFUL.dir/clean
+.PHONY : SolarSystem_SUCCESSFUL
 
 # clean rule for target.
-clean: CMakeFiles/Tutorial_SUCCESSFUL.dir/clean
+CMakeFiles/SolarSystem_SUCCESSFUL.dir/clean:
+	$(MAKE) -f CMakeFiles/SolarSystem_SUCCESSFUL.dir/build.make CMakeFiles/SolarSystem_SUCCESSFUL.dir/clean
+.PHONY : CMakeFiles/SolarSystem_SUCCESSFUL.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/SolarSystem_SUCCESSFUL.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Tutorial.dir
+# Target rules for target CMakeFiles/SolarSystem.dir
 
 # All Build rule for target.
-CMakeFiles/Tutorial.dir/all:
-	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/depend
-	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target Tutorial"
-.PHONY : CMakeFiles/Tutorial.dir/all
+CMakeFiles/SolarSystem.dir/all:
+	$(MAKE) -f CMakeFiles/SolarSystem.dir/build.make CMakeFiles/SolarSystem.dir/depend
+	$(MAKE) -f CMakeFiles/SolarSystem.dir/build.make CMakeFiles/SolarSystem.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target SolarSystem"
+.PHONY : CMakeFiles/SolarSystem.dir/all
 
 # Include target in all.
-all: CMakeFiles/Tutorial.dir/all
+all: CMakeFiles/SolarSystem.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Tutorial.dir/rule: cmake_check_build_system
+CMakeFiles/SolarSystem.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/cmake-build-debug/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Tutorial.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SolarSystem.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/Tutorial.dir/rule
+.PHONY : CMakeFiles/SolarSystem.dir/rule
 
 # Convenience name for target.
-Tutorial: CMakeFiles/Tutorial.dir/rule
+SolarSystem: CMakeFiles/SolarSystem.dir/rule
 
-.PHONY : Tutorial
-
-# clean rule for target.
-CMakeFiles/Tutorial.dir/clean:
-	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/clean
-.PHONY : CMakeFiles/Tutorial.dir/clean
+.PHONY : SolarSystem
 
 # clean rule for target.
-clean: CMakeFiles/Tutorial.dir/clean
+CMakeFiles/SolarSystem.dir/clean:
+	$(MAKE) -f CMakeFiles/SolarSystem.dir/build.make CMakeFiles/SolarSystem.dir/clean
+.PHONY : CMakeFiles/SolarSystem.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/SolarSystem.dir/clean
 
 .PHONY : clean
 
