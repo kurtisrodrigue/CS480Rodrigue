@@ -57,9 +57,22 @@ include CMakeFiles/Tutorial.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Tutorial.dir/flags.make
 
+CMakeFiles/Tutorial.dir/src/Physics.cpp.o: CMakeFiles/Tutorial.dir/flags.make
+CMakeFiles/Tutorial.dir/src/Physics.cpp.o: ../src/Physics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Tutorial.dir/src/Physics.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tutorial.dir/src/Physics.cpp.o -c /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/Physics.cpp
+
+CMakeFiles/Tutorial.dir/src/Physics.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tutorial.dir/src/Physics.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/Physics.cpp > CMakeFiles/Tutorial.dir/src/Physics.cpp.i
+
+CMakeFiles/Tutorial.dir/src/Physics.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tutorial.dir/src/Physics.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/Physics.cpp -o CMakeFiles/Tutorial.dir/src/Physics.cpp.s
+
 CMakeFiles/Tutorial.dir/src/camera.cpp.o: CMakeFiles/Tutorial.dir/flags.make
 CMakeFiles/Tutorial.dir/src/camera.cpp.o: ../src/camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Tutorial.dir/src/camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Tutorial.dir/src/camera.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tutorial.dir/src/camera.cpp.o -c /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/camera.cpp
 
 CMakeFiles/Tutorial.dir/src/camera.cpp.i: cmake_force
@@ -72,7 +85,7 @@ CMakeFiles/Tutorial.dir/src/camera.cpp.s: cmake_force
 
 CMakeFiles/Tutorial.dir/src/engine.cpp.o: CMakeFiles/Tutorial.dir/flags.make
 CMakeFiles/Tutorial.dir/src/engine.cpp.o: ../src/engine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Tutorial.dir/src/engine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Tutorial.dir/src/engine.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tutorial.dir/src/engine.cpp.o -c /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/engine.cpp
 
 CMakeFiles/Tutorial.dir/src/engine.cpp.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/Tutorial.dir/src/engine.cpp.s: cmake_force
 
 CMakeFiles/Tutorial.dir/src/graphics.cpp.o: CMakeFiles/Tutorial.dir/flags.make
 CMakeFiles/Tutorial.dir/src/graphics.cpp.o: ../src/graphics.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Tutorial.dir/src/graphics.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Tutorial.dir/src/graphics.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tutorial.dir/src/graphics.cpp.o -c /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/graphics.cpp
 
 CMakeFiles/Tutorial.dir/src/graphics.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/Tutorial.dir/src/graphics.cpp.s: cmake_force
 
 CMakeFiles/Tutorial.dir/src/main.cpp.o: CMakeFiles/Tutorial.dir/flags.make
 CMakeFiles/Tutorial.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Tutorial.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Tutorial.dir/src/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tutorial.dir/src/main.cpp.o -c /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/main.cpp
 
 CMakeFiles/Tutorial.dir/src/main.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/Tutorial.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/Tutorial.dir/src/object.cpp.o: CMakeFiles/Tutorial.dir/flags.make
 CMakeFiles/Tutorial.dir/src/object.cpp.o: ../src/object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Tutorial.dir/src/object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Tutorial.dir/src/object.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tutorial.dir/src/object.cpp.o -c /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/object.cpp
 
 CMakeFiles/Tutorial.dir/src/object.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/Tutorial.dir/src/object.cpp.s: cmake_force
 
 CMakeFiles/Tutorial.dir/src/shader.cpp.o: CMakeFiles/Tutorial.dir/flags.make
 CMakeFiles/Tutorial.dir/src/shader.cpp.o: ../src/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Tutorial.dir/src/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Tutorial.dir/src/shader.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tutorial.dir/src/shader.cpp.o -c /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/shader.cpp
 
 CMakeFiles/Tutorial.dir/src/shader.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/Tutorial.dir/src/shader.cpp.s: cmake_force
 
 CMakeFiles/Tutorial.dir/src/window.cpp.o: CMakeFiles/Tutorial.dir/flags.make
 CMakeFiles/Tutorial.dir/src/window.cpp.o: ../src/window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Tutorial.dir/src/window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Tutorial.dir/src/window.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tutorial.dir/src/window.cpp.o -c /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/window.cpp
 
 CMakeFiles/Tutorial.dir/src/window.cpp.i: cmake_force
@@ -150,6 +163,7 @@ CMakeFiles/Tutorial.dir/src/window.cpp.s: cmake_force
 
 # Object files for target Tutorial
 Tutorial_OBJECTS = \
+"CMakeFiles/Tutorial.dir/src/Physics.cpp.o" \
 "CMakeFiles/Tutorial.dir/src/camera.cpp.o" \
 "CMakeFiles/Tutorial.dir/src/engine.cpp.o" \
 "CMakeFiles/Tutorial.dir/src/graphics.cpp.o" \
@@ -161,6 +175,7 @@ Tutorial_OBJECTS = \
 # External object files for target Tutorial
 Tutorial_EXTERNAL_OBJECTS =
 
+Tutorial: CMakeFiles/Tutorial.dir/src/Physics.cpp.o
 Tutorial: CMakeFiles/Tutorial.dir/src/camera.cpp.o
 Tutorial: CMakeFiles/Tutorial.dir/src/engine.cpp.o
 Tutorial: CMakeFiles/Tutorial.dir/src/graphics.cpp.o
@@ -177,7 +192,7 @@ Tutorial: /usr/local/lib/libLinearMath.dylib
 Tutorial: /usr/local/lib/libBulletSoftBody.dylib
 Tutorial: /usr/local/Cellar/imagemagick/7.0.8-12/lib/libMagick++-7.Q16HDRI.dylib
 Tutorial: CMakeFiles/Tutorial.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Tutorial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Tutorial"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tutorial.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

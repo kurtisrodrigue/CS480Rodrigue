@@ -3,11 +3,15 @@
 
 #include <vector>
 #include "graphics_headers.h"
+#include "Physics.h"
 
+class PhysicsEngine;
 class Object
 {
+	friend class PhysicsEngine;
   public:
     Object();
+    Object(const char* obj, const char* tex);
     ~Object();
     void Update(unsigned int dt);
     void Render();
@@ -28,6 +32,11 @@ class Object
 	const aiScene* m_aiscene;
 
 	Magick::Blob m_blob;
+
+	PhysicsEngine *m_physics;
+
+	btCollisionShape *m_shape;
+	btRigidBody *m_rigidbody;
 
     float angle;
     float orbit_angle;

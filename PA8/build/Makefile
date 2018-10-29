@@ -136,6 +136,33 @@ Tutorial/fast:
 	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/build
 .PHONY : Tutorial/fast
 
+src/Physics.o: src/Physics.cpp.o
+
+.PHONY : src/Physics.o
+
+# target to build an object file
+src/Physics.cpp.o:
+	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/src/Physics.cpp.o
+.PHONY : src/Physics.cpp.o
+
+src/Physics.i: src/Physics.cpp.i
+
+.PHONY : src/Physics.i
+
+# target to preprocess a source file
+src/Physics.cpp.i:
+	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/src/Physics.cpp.i
+.PHONY : src/Physics.cpp.i
+
+src/Physics.s: src/Physics.cpp.s
+
+.PHONY : src/Physics.s
+
+# target to generate assembly for a file
+src/Physics.cpp.s:
+	$(MAKE) -f CMakeFiles/Tutorial.dir/build.make CMakeFiles/Tutorial.dir/src/Physics.cpp.s
+.PHONY : src/Physics.cpp.s
+
 src/camera.o: src/camera.cpp.o
 
 .PHONY : src/camera.o
@@ -335,6 +362,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... Tutorial_SUCCESSFUL"
 	@echo "... Tutorial"
+	@echo "... src/Physics.o"
+	@echo "... src/Physics.i"
+	@echo "... src/Physics.s"
 	@echo "... src/camera.o"
 	@echo "... src/camera.i"
 	@echo "... src/camera.s"

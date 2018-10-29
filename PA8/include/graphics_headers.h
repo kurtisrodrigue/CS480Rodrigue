@@ -28,8 +28,10 @@
 #include <assimp/postprocess.h>
 #include <assimp/color4.h>
 
+//imagemagick
 #include <Magick++.h>
 
+//bullet
 #include <btBulletDynamicsCommon.h>
 
 
