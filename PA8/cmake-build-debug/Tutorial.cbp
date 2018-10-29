@@ -5,7 +5,7 @@
 		<Option title="Tutorial"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="clang"/>
-		<Option virtualFolders="CMake Files\;CMake Files\CMakeModules\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\CMakeModules\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\assimp-4.1\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/cmake-build-debug"/>
@@ -59,6 +59,7 @@
 					<Add directory="/usr/local/include/SDL2"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/bullet"/>
+					<Add directory="/usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -85,6 +86,7 @@
 					<Add directory="/usr/local/include/SDL2"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/bullet"/>
+					<Add directory="/usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -132,6 +134,12 @@
 		</Unit>
 		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/CMakeModules/FindSDL2.cmake">
 			<Option virtualFolder="CMake Files\CMakeModules\"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/../../../../../../usr/local/lib/cmake/assimp-4.1/assimp-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\assimp-4.1\"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/../../../../../../usr/local/lib/cmake/assimp-4.1/assimp-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\assimp-4.1\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -1,66 +1,10 @@
 #include "object.h"
 
 Object::Object()
-{  
-  /*
-    # Blender File for a Cube
-    o Cube
-    v 1.000000 -1.000000 -1.000000
-    v 1.000000 -1.000000 1.000000
-    v -1.000000 -1.000000 1.000000
-    v -1.000000 -1.000000 -1.000000
-    v 1.000000 1.000000 -0.999999
-    v 0.999999 1.000000 1.000001
-    v -1.000000 1.000000 1.000000
-    v -1.000000 1.000000 -1.000000
-    s off
-    f 2 3 4
-    f 8 7 6
-    f 1 5 6
-    f 2 6 7
-    f 7 8 4
-    f 1 4 8
-    f 1 2 4
-    f 5 8 6
-    f 2 1 6
-    f 3 2 7
-    f 3 7 4
-    f 5 1 8
-  */
-
-  Vertices = {
-    {{1.0f, -1.0f, -1.0f}, {0.0f, 0.0f, 0.0f}},
-    {{1.0f, -1.0f, 1.0f}, {1.0f, 0.0f, 0.0f}},
-    {{-1.0f, -1.0f, 1.0f}, {0.0f, 1.0f, 0.0f}},
-    {{-1.0f, -1.0f, -1.0f}, {0.0f, 0.0f, 1.0f}},
-    {{1.0f, 1.0f, -1.0f}, {1.0f, 1.0f, 0.0f}},
-    {{1.0f, 1.0f, 1.0f}, {1.0f, 0.0f, 1.0f}},
-    {{-1.0f, 1.0f, 1.0f}, {0.0f, 1.0f, 1.0f}},
-    {{-1.0f, 1.0f, -1.0f}, {1.0f, 1.0f, 1.0f}}
-  };
-
-  Indices = {
-    2, 3, 4,
-    8, 7, 6,
-    1, 5, 6,
-    2, 6, 7,
-    7, 8, 4,
-    1, 4, 8,
-    1, 2, 4,
-    5, 8, 6,
-    2, 1, 6,
-    3, 2, 7,
-    3, 7, 4,
-    5, 1, 8
-  };
-
-  // The index works at a 0th index
-  for(unsigned int i = 0; i < Indices.size(); i++)
-  {
-    Indices[i] = Indices[i] - 1;
-  }
-
+{
   angle = 0.0f;
+
+  LoadOBJ("../assets/sphere.obj", "../assets/woodtex.jpeg");
 
   glGenBuffers(1, &VB);
   glBindBuffer(GL_ARRAY_BUFFER, VB);
@@ -81,9 +25,9 @@ void Object::Update(unsigned int dt)
 {
     static double orbit_angle = 0;
     angle += dt * M_PI/1000;
+	orbit_angle += dt * M_PI/2000;
     model = glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 1.0, 0.0));
     model = glm::translate(model, glm::vec3(10 * cos(orbit_angle),0,10 * sin(orbit_angle)));
-    orbit_angle += dt * M_PI/2000;
     if(orbit_angle > 360)
     {
         orbit_angle -= 360;
@@ -98,18 +42,84 @@ glm::mat4 Object::GetModel()
 
 void Object::Render()
 {
-  glEnableVertexAttribArray(0);
-  glEnableVertexAttribArray(1);
+	glEnableVertexAttribArray(0);
+	glEnableVertexAttribArray(1);
+	glEnableVertexAttribArray(2);
 
-  glBindBuffer(GL_ARRAY_BUFFER, VB);
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex,color));
+	glBindBuffer(GL_ARRAY_BUFFER, VB);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex,color));
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex,Texture));
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
 
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glDrawElements(GL_TRIANGLES, Indices.size(), GL_UNSIGNED_INT, 0);
 
-  glDrawElements(GL_TRIANGLES, Indices.size(), GL_UNSIGNED_INT, 0);
-
-  glDisableVertexAttribArray(0);
-  glDisableVertexAttribArray(1);
+	glDisableVertexAttribArray(0);
+	glDisableVertexAttribArray(1);
+	glDisableVertexAttribArray(2);
 }
+
+void Object::LoadOBJ(const char* obj, const char* tex)
+{
+	Assimp::Importer importer;
+	std::ifstream fin(obj);
+
+	m_aiscene = importer.ReadFile(obj, aiProcess_Triangulate);
+
+	for (int i = 0; i < m_aiscene->mNumMeshes; i++) {
+		for (int j = 0; j < m_aiscene->mMeshes[i]->mNumVertices; j++) {
+			glm::vec3 temp_vertex(float(m_aiscene->mMeshes[i]->mVertices[j].x),
+			                      float(m_aiscene->mMeshes[i]->mVertices[j].y),
+			                      float(m_aiscene->mMeshes[i]->mVertices[j].z));
+			glm::vec2 temp_textures;
+
+			if(m_aiscene->mMeshes[i]->mTextureCoords[0] != NULL)
+			{
+				temp_textures = glm::vec2(m_aiscene->mMeshes[i]->mTextureCoords[0][j].x,
+				                          -m_aiscene->mMeshes[i]->mTextureCoords[0][j].y);
+			}
+
+
+			Vertices.push_back(Vertex(temp_vertex, temp_vertex,temp_textures));
+		}
+
+
+	}
+	for (int i = 0; i < m_aiscene->mNumMeshes; i++) {
+		for (int j = 0; j < m_aiscene->mMeshes[i]->mNumFaces; j++) {
+			Indices.push_back(m_aiscene->mMeshes[i]->mFaces[j].mIndices[0]);
+			Indices.push_back(m_aiscene->mMeshes[i]->mFaces[j].mIndices[1]);
+			Indices.push_back(m_aiscene->mMeshes[i]->mFaces[j].mIndices[2]);
+
+		}
+	}
+
+	Magick::Image *image;
+	image = new Magick::Image(tex);
+	image->write(&m_blob, "RGBA");
+
+
+
+	angle = 0.0f;
+	orbit_angle = 0;
+
+	glGenBuffers(1, &VB);
+	glBindBuffer(GL_ARRAY_BUFFER, VB);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * Vertices.size(), &Vertices[0], GL_STATIC_DRAW);
+
+	glGenBuffers(1, &IB);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * Indices.size(), &Indices[0], GL_STATIC_DRAW);
+
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image->columns(), image->rows(), 0, GL_RGBA, GL_UNSIGNED_BYTE, m_blob.data());
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glBindTexture(GL_TEXTURE_2D, 0);
+	delete image;
+}
+
 

@@ -25,6 +25,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/local/include/SDL2"
   "/usr/local/include"
   "/usr/local/include/bullet"
+  "/usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7"
   )
 
 # Targets to which this target links.

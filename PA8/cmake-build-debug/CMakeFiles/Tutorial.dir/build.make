@@ -175,6 +175,7 @@ Tutorial: /usr/local/lib/libBulletDynamics.dylib
 Tutorial: /usr/local/lib/libBulletCollision.dylib
 Tutorial: /usr/local/lib/libLinearMath.dylib
 Tutorial: /usr/local/lib/libBulletSoftBody.dylib
+Tutorial: /usr/local/Cellar/imagemagick/7.0.8-12/lib/libMagick++-7.Q16HDRI.dylib
 Tutorial: CMakeFiles/Tutorial.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Tutorial"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Tutorial.dir/link.txt --verbose=$(VERBOSE)

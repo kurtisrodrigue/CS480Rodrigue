@@ -22,6 +22,14 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/rotate_vector.hpp>
 
+//Assimp Includes
+#include <assimp/Importer.hpp>      // C++ importer interface
+#include <assimp/scene.h>           // Output data structure
+#include <assimp/postprocess.h>
+#include <assimp/color4.h>
+
+#include <Magick++.h>
+
 #include <btBulletDynamicsCommon.h>
 
 
@@ -31,8 +39,9 @@ struct Vertex
 {
   glm::vec3 vertex;
   glm::vec3 color;
+  glm::vec2 Texture;
 
-  Vertex(glm::vec3 v, glm::vec3 c): vertex(v), color(c) {}
+  Vertex(glm::vec3 v, glm::vec3 c, glm::vec2 t): vertex(v), color(c), Texture(t) {}
 };
 
 #endif /* GRAPHICS_HEADERS_H */

@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//the suffix for the openrave libraries
+ASSIMP_LIBRARY_SUFFIX:STRING=
+
+//The directory containing a CMake configuration file for Assimp.
+Assimp_DIR:PATH=/usr/local/lib/cmake/assimp-4.1
+
 //Path to a library.
 BULLET_COLLISION_LIBRARY:FILEPATH=/usr/local/lib/libBulletCollision.dylib
 
@@ -239,6 +245,36 @@ GLEW_LIBRARY_PATH:FILEPATH=/usr/local/lib/libGLEW.dylib
 //The directory where glm/glm.hpp resides
 GLM_INCLUDE_DIR:PATH=/usr/local/include
 
+//Path to the ImageMagick binary directory.
+IMAGEMAGICK_BINARY_PATH:PATH=/usr/local/bin
+
+//Path to ImageMagick's composite executable.
+IMAGEMAGICK_COMPOSITE_EXECUTABLE:FILEPATH=/usr/local/bin/composite
+
+//Path to ImageMagick's convert executable.
+IMAGEMAGICK_CONVERT_EXECUTABLE:FILEPATH=/usr/local/bin/convert
+
+//Path to ImageMagick's import executable.
+IMAGEMAGICK_IMPORT_EXECUTABLE:FILEPATH=/usr/local/bin/import
+
+//Path to ImageMagick's mogrify executable.
+IMAGEMAGICK_MOGRIFY_EXECUTABLE:FILEPATH=/usr/local/bin/mogrify
+
+//Path to ImageMagick's montage executable.
+IMAGEMAGICK_MONTAGE_EXECUTABLE:FILEPATH=/usr/local/bin/montage
+
+//Path to the ImageMagick binary directory.
+ImageMagick_EXECUTABLE_DIR:PATH=/usr/local/bin
+
+//Path to the ImageMagick arch-specific include dir.
+ImageMagick_Magick++_ARCH_INCLUDE_DIR:PATH=ImageMagick_Magick++_ARCH_INCLUDE_DIR-NOTFOUND
+
+//Path to the ImageMagick arch-independent include dir.
+ImageMagick_Magick++_INCLUDE_DIR:PATH=/usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7
+
+//Path to the ImageMagick Magick++ library.
+ImageMagick_Magick++_LIBRARY:FILEPATH=/usr/local/Cellar/imagemagick/7.0.8-12/lib/libMagick++-7.Q16HDRI.dylib
+
 //Include for OpenGL on OS X
 OPENGL_INCLUDE_DIR:PATH=/System/Library/Frameworks/OpenGL.framework
 
@@ -247,6 +283,9 @@ OPENGL_gl_LIBRARY:FILEPATH=/System/Library/Frameworks/OpenGL.framework
 
 //GLU library for OS X (usually same as OpenGL library)
 OPENGL_glu_LIBRARY:FILEPATH=/System/Library/Frameworks/OpenGL.framework
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/local/bin/pkg-config
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
@@ -266,11 +305,22 @@ Tutorial_BINARY_DIR:STATIC=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/c
 //Value Computed by CMake
 Tutorial_SOURCE_DIR:STATIC=/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8
 
+//Path to a library.
+pkgcfg_lib_PC_Magick++_Magick++-7.Q16HDRI:FILEPATH=/usr/local/Cellar/imagemagick/7.0.8-12/lib/libMagick++-7.Q16HDRI.dylib
+
+//Path to a library.
+pkgcfg_lib_PC_Magick++_MagickCore-7.Q16HDRI:FILEPATH=/usr/local/Cellar/imagemagick/7.0.8-12/lib/libMagickCore-7.Q16HDRI.dylib
+
+//Path to a library.
+pkgcfg_lib_PC_Magick++_MagickWand-7.Q16HDRI:FILEPATH=/usr/local/Cellar/imagemagick/7.0.8-12/lib/libMagickWand-7.Q16HDRI.dylib
+
 
 ########################
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: ASSIMP_LIBRARY_SUFFIX
+ASSIMP_LIBRARY_SUFFIX-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BULLET_COLLISION_LIBRARY
 BULLET_COLLISION_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BULLET_COLLISION_LIBRARY_DEBUG
@@ -430,19 +480,72 @@ FIND_PACKAGE_MESSAGE_DETAILS_Bullet:INTERNAL=[/usr/local/lib/libBulletDynamics.d
 FIND_PACKAGE_MESSAGE_DETAILS_GLEW:INTERNAL=[/usr/local/include][/usr/local/lib/libGLEW.dylib][v()]
 //Details about finding GLM
 FIND_PACKAGE_MESSAGE_DETAILS_GLM:INTERNAL=[/usr/local/include][v()]
+//Details about finding ImageMagick
+FIND_PACKAGE_MESSAGE_DETAILS_ImageMagick:INTERNAL=[/usr/local/Cellar/imagemagick/7.0.8-12/lib/libMagick++-7.Q16HDRI.dylib][v7.0.8-12()]
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/System/Library/Frameworks/OpenGL.framework][/System/Library/Frameworks/OpenGL.framework][c ][v()]
 //Details about finding SDL2
 FIND_PACKAGE_MESSAGE_DETAILS_SDL2:INTERNAL=[/usr/local/lib/libSDL2main.a;/usr/local/lib/libSDL2.dylib;-framework Cocoa][/usr/local/include/SDL2][v()]
 //ADVANCED property for variable: GLM_INCLUDE_DIR
 GLM_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IMAGEMAGICK_BINARY_PATH
+IMAGEMAGICK_BINARY_PATH-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IMAGEMAGICK_COMPOSITE_EXECUTABLE
+IMAGEMAGICK_COMPOSITE_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IMAGEMAGICK_CONVERT_EXECUTABLE
+IMAGEMAGICK_CONVERT_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IMAGEMAGICK_IMPORT_EXECUTABLE
+IMAGEMAGICK_IMPORT_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IMAGEMAGICK_MOGRIFY_EXECUTABLE
+IMAGEMAGICK_MOGRIFY_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: IMAGEMAGICK_MONTAGE_EXECUTABLE
+IMAGEMAGICK_MONTAGE_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_INCLUDE_DIR
 OPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_gl_LIBRARY
 OPENGL_gl_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_glu_LIBRARY
 OPENGL_glu_LIBRARY-ADVANCED:INTERNAL=1
+PC_Magick++_CFLAGS:INTERNAL=-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16;-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16;-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16;-I/usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7
+PC_Magick++_CFLAGS_I:INTERNAL=
+PC_Magick++_CFLAGS_OTHER:INTERNAL=-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16;-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16;-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16
+PC_Magick++_FOUND:INTERNAL=1
+PC_Magick++_INCLUDEDIR:INTERNAL=/usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7
+PC_Magick++_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7
+PC_Magick++_LDFLAGS:INTERNAL=-L/usr/local/Cellar/imagemagick/7.0.8-12/lib;-lMagick++-7.Q16HDRI;-lMagickWand-7.Q16HDRI;-lMagickCore-7.Q16HDRI
+PC_Magick++_LDFLAGS_OTHER:INTERNAL=
+PC_Magick++_LIBDIR:INTERNAL=/usr/local/Cellar/imagemagick/7.0.8-12/lib
+PC_Magick++_LIBRARIES:INTERNAL=Magick++-7.Q16HDRI;MagickWand-7.Q16HDRI;MagickCore-7.Q16HDRI
+PC_Magick++_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/imagemagick/7.0.8-12/lib
+PC_Magick++_LIBS:INTERNAL=
+PC_Magick++_LIBS_L:INTERNAL=
+PC_Magick++_LIBS_OTHER:INTERNAL=
+PC_Magick++_LIBS_PATHS:INTERNAL=
+PC_Magick++_Magick++_INCLUDEDIR:INTERNAL=
+PC_Magick++_Magick++_LIBDIR:INTERNAL=
+PC_Magick++_Magick++_PREFIX:INTERNAL=
+PC_Magick++_Magick++_VERSION:INTERNAL=
+PC_Magick++_PREFIX:INTERNAL=/usr/local/Cellar/imagemagick/7.0.8-12
+PC_Magick++_STATIC_CFLAGS:INTERNAL=-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16;-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16;-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16;-I/usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7
+PC_Magick++_STATIC_CFLAGS_I:INTERNAL=
+PC_Magick++_STATIC_CFLAGS_OTHER:INTERNAL=-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16;-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16;-DMAGICKCORE_HDRI_ENABLE=1;-DMAGICKCORE_QUANTUM_DEPTH=16
+PC_Magick++_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7
+PC_Magick++_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/imagemagick/7.0.8-12/lib;-L/usr/local/opt/freetype/lib;-L/usr/local/Cellar/fontconfig/2.13.1/lib;-L/usr/local/Cellar/xz/5.2.4/lib;-L/usr/local/Cellar/imagemagick/7.0.8-12/lib;-L/usr/local/opt/freetype/lib;-L/usr/local/Cellar/fontconfig/2.13.1/lib;-L/usr/local/Cellar/xz/5.2.4/lib;-lMagick++-7.Q16HDRI;-lm;-lMagickWand-7.Q16HDRI;-lfreetype;-lxml2;-lfontconfig;-lfreetype;-llzma;-lbz2;-lz;-lltdl;-lm;-lMagickCore-7.Q16HDRI;-lfreetype;-lxml2;-lfontconfig;-lfreetype;-llzma;-lbz2;-lz;-lltdl;-lm
+PC_Magick++_STATIC_LDFLAGS_OTHER:INTERNAL=
+PC_Magick++_STATIC_LIBDIR:INTERNAL=
+PC_Magick++_STATIC_LIBRARIES:INTERNAL=Magick++-7.Q16HDRI;m;MagickWand-7.Q16HDRI;freetype;xml2;fontconfig;freetype;lzma;bz2;z;ltdl;m;MagickCore-7.Q16HDRI;freetype;xml2;fontconfig;freetype;lzma;bz2;z;ltdl;m
+PC_Magick++_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/imagemagick/7.0.8-12/lib;/usr/local/opt/freetype/lib;/usr/local/Cellar/fontconfig/2.13.1/lib;/usr/local/Cellar/xz/5.2.4/lib;/usr/local/Cellar/imagemagick/7.0.8-12/lib;/usr/local/opt/freetype/lib;/usr/local/Cellar/fontconfig/2.13.1/lib;/usr/local/Cellar/xz/5.2.4/lib
+PC_Magick++_STATIC_LIBS:INTERNAL=
+PC_Magick++_STATIC_LIBS_L:INTERNAL=
+PC_Magick++_STATIC_LIBS_OTHER:INTERNAL=
+PC_Magick++_STATIC_LIBS_PATHS:INTERNAL=
+PC_Magick++_VERSION:INTERNAL=7.0.8
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl
 ProcessorCount_cmd_sysctl-ADVANCED:INTERNAL=1
-SDL2_LIBRARY_TEMP:INTERNAL=/usr/local/lib/libSDL2main.a;/usr/local/lib/libSDL2main.a;/usr/local/lib/libSDL2.dylib;-framework Cocoa;-framework Cocoa
+SDL2_LIBRARY_TEMP:INTERNAL=/usr/local/lib/libSDL2main.a;/usr/local/lib/libSDL2main.a;/usr/local/lib/libSDL2main.a;/usr/local/lib/libSDL2.dylib;-framework Cocoa;-framework Cocoa;-framework Cocoa
+__pkg_config_arguments_PC_Magick++:INTERNAL=QUIET;Magick++
+__pkg_config_checked_PC_Magick++:INTERNAL=1
+prefix_result:INTERNAL=/usr/local/Cellar/imagemagick/7.0.8-12/lib
 

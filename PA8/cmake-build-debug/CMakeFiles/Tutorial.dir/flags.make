@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=gnu++11 -g
 
 CXX_DEFINES = -DUNIX
 
-CXX_INCLUDES = -I/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/include -I/usr/local/include/SDL2 -I/usr/local/include -I/usr/local/include/bullet 
+CXX_INCLUDES = -I/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/include -I/usr/local/include/SDL2 -I/usr/local/include -I/usr/local/include/bullet -I/usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7 
 

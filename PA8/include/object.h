@@ -11,8 +11,10 @@ class Object
     ~Object();
     void Update(unsigned int dt);
     void Render();
+	void LoadOBJ(const char* obj, const char* tex);
 
-    glm::mat4 GetModel();
+
+	glm::mat4 GetModel();
 
   private:
     glm::mat4 model;
@@ -21,7 +23,14 @@ class Object
     GLuint VB;
     GLuint IB;
 
+	GLuint texture;
+
+	const aiScene* m_aiscene;
+
+	Magick::Blob m_blob;
+
     float angle;
+    float orbit_angle;
 };
 
 #endif /* OBJECT_H */
