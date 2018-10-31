@@ -4,8 +4,6 @@ Object::Object()
 {
   angle = 0.0f;
 
-  LoadOBJ("../assets/sphere.obj", "../assets/woodtex.jpeg");
-
   glGenBuffers(1, &VB);
   glBindBuffer(GL_ARRAY_BUFFER, VB);
   glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * Vertices.size(), &Vertices[0], GL_STATIC_DRAW);
@@ -38,15 +36,12 @@ Object::~Object()
 
 void Object::Update(unsigned int dt)
 {
-    static double orbit_angle = 0;
-    angle += dt * M_PI/1000;
-	orbit_angle += dt * M_PI/2000;
-    model = glm::rotate(glm::mat4(1.0f), (angle), glm::vec3(0.0, 1.0, 0.0));
-    model = glm::translate(model, glm::vec3(10 * cos(orbit_angle),0,10 * sin(orbit_angle)));
-    if(orbit_angle > 360)
-    {
-        orbit_angle -= 360;
-    }
+	btTransform trans;
+	btScalar m[16];
+	m_physics->m_dynamicsWorld->stepSimulation(dt, 1);
+	m_rigidbody->getMotionState()->getWorldTransform(trans);
+	trans.getOpenGLMatrix(m);
+	model = glm::make_mat4(m);
 
 }
 
@@ -75,6 +70,7 @@ void Object::Render()
 	glDisableVertexAttribArray(1);
 	glDisableVertexAttribArray(2);
 }
+
 
 void Object::LoadOBJ(const char* obj, const char* tex)
 {
@@ -114,8 +110,6 @@ void Object::LoadOBJ(const char* obj, const char* tex)
 	Magick::Image *image;
 	image = new Magick::Image(tex);
 	image->write(&m_blob, "RGBA");
-
-
 
 	angle = 0.0f;
 	orbit_angle = 0;

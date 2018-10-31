@@ -8,6 +8,7 @@ class PhysicsEngine
 {
 public:
 	PhysicsEngine();
+	~PhysicsEngine();
 	// bullet things
 	btBroadphaseInterface *m_broadphase;
 	btDefaultCollisionConfiguration *m_configuration;
@@ -17,6 +18,8 @@ public:
 
 	// functions
 	void createObjects();
+	void Update(unsigned int dt);
+	void Render();
 
 	// objects
 	Object *m_board; // using triangle meshes
@@ -29,3 +32,5 @@ public:
 };
 
 #endif //TUTORIAL_PHYSICS_H
+
+

@@ -44,8 +44,8 @@ bool Graphics::Initialize(int width, int height)
     return false;
   }
 
-  // Create the object
-  m_cube = new Object();
+  phys_eng = new PhysicsEngine;
+  phys_eng->createObjects();
 
   // Set up the shaders
   m_shader = new Shader();
@@ -110,7 +110,7 @@ bool Graphics::Initialize(int width, int height)
 void Graphics::Update(unsigned int dt)
 {
   // Update the object
-  m_cube->Update(dt);
+  phys_eng->Update(dt);
 }
 
 void Graphics::Render()
@@ -126,9 +126,18 @@ void Graphics::Render()
   glUniformMatrix4fv(m_projectionMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetProjection())); 
   glUniformMatrix4fv(m_viewMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetView())); 
 
-  // Render the object
-  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(m_cube->GetModel()));
-  m_cube->Render();
+  // Render the objects
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_board->GetModel()));
+  phys_eng->m_board->Render();
+
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_box->GetModel()));
+  phys_eng->m_box->Render();
+
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_ball->GetModel()));
+  phys_eng->m_ball->Render();
+
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_cylinder->GetModel()));
+  phys_eng->m_cylinder->Render();
 
   // Get any errors from OpenGL
   auto error = glGetError();
