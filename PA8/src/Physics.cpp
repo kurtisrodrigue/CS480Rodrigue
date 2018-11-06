@@ -38,7 +38,7 @@ void PhysicsEngine::createObjects()
 {
 
 	//BOARD
-	m_board = new Object("../assets/board.obj" , "../assets/woodtex.jpeg");
+	m_board = new Object("../assets/board.obj" , "../assets/woodtex.jpeg",3.0f);
 	m_board->m_physics = this;
 
 	btVector3 triArray[3];
@@ -75,7 +75,7 @@ void PhysicsEngine::createObjects()
 
 
 	// BOX -----------------------------------------------------------
-	m_box = new Object("../assets/box.obj" , "../assets/woodtex.jpeg");
+	m_box = new Object("../assets/box.obj" , "../assets/woodtex.jpeg",0.5f);
 	m_box->m_physics = this;
 	m_box->m_shape = new btBoxShape(btVector3(0,3,0));
 	shapeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1),
@@ -87,19 +87,19 @@ void PhysicsEngine::createObjects()
 	m_dynamicsWorld->addRigidBody(m_box->m_rigidbody, 1 , 1);
 
 	// BALL -----------------------------------------------------------
-	m_ball = new Object("../assets/sphere.obj" , "../assets/metal.jpg");
+	m_ball = new Object("../assets/sphere.obj" , "../assets/metal.jpg",0.2f);
 	m_ball->m_physics = this;
 	m_ball->m_shape = new btBoxShape(btVector3(0,3,0));
 	shapeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1),
 	                                                        btVector3(3, 3, 0)));
-	mass = 0;
+	mass = 1;
 	m_ball->m_shape->calculateLocalInertia(mass, inertia);
 	btRigidBody::btRigidBodyConstructionInfo shapeRigidBodyCI2(mass, shapeMotionState, m_ball->m_shape, inertia);
 	m_ball->m_rigidbody = new btRigidBody(shapeRigidBodyCI2);
 	m_dynamicsWorld->addRigidBody(m_ball->m_rigidbody, 1 , 1);
 
 	// Cylinder -----------------------------------------------------------
-	m_cylinder = new Object("../assets/cylinder.obj" , "../assets/woodtex.jpeg");
+	m_cylinder = new Object("../assets/cylinder.obj" , "../assets/woodtex.jpeg",0.5f);
 	m_cylinder->m_physics = this;
 	m_cylinder->m_shape = new btCylinderShape(btVector3(0,3,0));
 	shapeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1),

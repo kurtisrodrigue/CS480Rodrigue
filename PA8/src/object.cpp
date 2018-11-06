@@ -2,7 +2,6 @@
 
 Object::Object()
 {
-  angle = 0.0f;
 
   glGenBuffers(1, &VB);
   glBindBuffer(GL_ARRAY_BUFFER, VB);
@@ -13,9 +12,9 @@ Object::Object()
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * Indices.size(), &Indices[0], GL_STATIC_DRAW);
 }
 
-Object::Object(const char* obj, const char* tex)
+Object::Object(const char* obj, const char* tex, float siz)
 {
-	angle = 0.0f;
+	size = siz;
 
 	LoadOBJ(obj, tex);
 
@@ -42,7 +41,14 @@ void Object::Update(unsigned int dt)
 	m_rigidbody->getMotionState()->getWorldTransform(trans);
 	trans.getOpenGLMatrix(m);
 	model = glm::make_mat4(m);
+	Scale();
 
+
+}
+
+void Object::Scale()
+{
+	model = glm::scale(model,glm::vec3(size,size,size));
 }
 
 glm::mat4 Object::GetModel()
@@ -110,9 +116,6 @@ void Object::LoadOBJ(const char* obj, const char* tex)
 	Magick::Image *image;
 	image = new Magick::Image(tex);
 	image->write(&m_blob, "RGBA");
-
-	angle = 0.0f;
-	orbit_angle = 0;
 
 	glGenBuffers(1, &VB);
 	glBindBuffer(GL_ARRAY_BUFFER, VB);
