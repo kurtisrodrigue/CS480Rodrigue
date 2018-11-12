@@ -11,10 +11,11 @@ class Object
 	friend class PhysicsEngine;
   public:
     Object();
-    Object(const char* obj, const char* tex);
+    Object(const char* obj, const char* tex, float siz);
     ~Object();
     void Update(unsigned int dt);
     void Render();
+    void Scale();
 	void LoadOBJ(const char* obj, const char* tex);
 	glm::mat4 GetModel();
 
@@ -36,8 +37,7 @@ class Object
 	btCollisionShape *m_shape;
 	btRigidBody *m_rigidbody;
 
-    float angle;
-    float orbit_angle;
+    float size;
 };
 
 #endif /* OBJECT_H */
