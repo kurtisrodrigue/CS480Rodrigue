@@ -19,7 +19,6 @@ public:
 	// functions
 	void createObjects();
 	void Update(unsigned int dt);
-	void Render();
 
 	// objects
 	Object *m_board; // using triangle meshes

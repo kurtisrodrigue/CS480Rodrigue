@@ -27,13 +27,6 @@ void PhysicsEngine::Update(unsigned int dt)
 	m_cylinder->Update(dt);
 }
 
-void PhysicsEngine::Render()
-{
-	m_board->Render();
-	m_plane->Render();
-	m_box->Render();
-}
-
 void PhysicsEngine::createObjects()
 {
 
