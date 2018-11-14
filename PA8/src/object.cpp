@@ -14,17 +14,21 @@ Object::Object()
 
 Object::Object(const char* obj, const char* tex, float siz)
 {
+	
 	size = siz;
 
 	LoadOBJ(obj, tex);
+	
 
 	glGenBuffers(1, &VB);
 	glBindBuffer(GL_ARRAY_BUFFER, VB);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * Vertices.size(), &Vertices[0], GL_STATIC_DRAW);
+	
 
 	glGenBuffers(1, &IB);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * Indices.size(), &Indices[0], GL_STATIC_DRAW);
+	
 }
 
 Object::~Object()
@@ -82,7 +86,7 @@ void Object::LoadOBJ(const char* obj, const char* tex)
 {
 	Assimp::Importer importer;
 	std::ifstream fin(obj);
-
+	
 	m_aiscene = importer.ReadFile(obj, aiProcess_Triangulate);
 
 	for (int i = 0; i < m_aiscene->mNumMeshes; i++) {

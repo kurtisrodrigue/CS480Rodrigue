@@ -127,8 +127,8 @@ void Graphics::Render()
   glUniformMatrix4fv(m_viewMatrix, 1, GL_FALSE, glm::value_ptr(m_camera->GetView())); 
 
   // Render the objects
-  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_board->GetModel()));
-  phys_eng->m_board->Render();
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_plane->GetModel()));
+  phys_eng->m_plane->Render();
 
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_box->GetModel()));
   phys_eng->m_box->Render();
