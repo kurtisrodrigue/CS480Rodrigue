@@ -136,8 +136,8 @@ void Graphics::Render()
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_ball->GetModel()));
   phys_eng->m_ball->Render();
 
-  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_cylinder->GetModel()));
-  phys_eng->m_cylinder->Render();
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_cylinder1->GetModel()));
+  phys_eng->m_cylinder1->Render();
 
   // Get any errors from OpenGL
   auto error = glGetError();
