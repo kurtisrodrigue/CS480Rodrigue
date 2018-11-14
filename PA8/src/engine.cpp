@@ -34,7 +34,6 @@ bool Engine::Initialize()
     printf("The window failed to initialize.\n");
     return false;
   }
-
   // Start the graphics
   m_graphics = new Graphics();
   if(!m_graphics->Initialize(m_WINDOW_WIDTH, m_WINDOW_HEIGHT))
@@ -45,7 +44,6 @@ bool Engine::Initialize()
 
   // Set the time
   m_currentTimeMillis = GetCurrentTimeMillis();
-
   // No errors
   return true;
 }
@@ -86,6 +84,16 @@ void Engine::Keyboard()
     if (m_event.key.keysym.sym == SDLK_ESCAPE)
     {
       m_running = false;
+    }
+    if (m_event.key.keysym.sym == SDLK_l)
+    {
+	//Check if the state is reset
+	//Call pBody->applyCentralImpulse( btVector3( 0.f, 0.f, -force ) ); on the rigidbody of the ball
+	//m_graphics->Launch();
+    }
+    if (m_event.key.keysym.sym == SDLK_r)
+    {
+	//Reset the state of the game
     }
   }
 }

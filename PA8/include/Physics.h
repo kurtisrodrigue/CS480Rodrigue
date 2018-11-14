@@ -21,6 +21,7 @@ public:
 	void adjustGravity(float x,float y,float z);
 	void Update(unsigned int dt);
 	void Render();
+        void Launch();
 
 	// objects
 	Object *m_ball; // basic sphere
@@ -38,8 +39,7 @@ public:
 	Object *m_deadWall;//part of surrounding wall
 	Object *m_ricochetWall;//part of surrounding wall
 	Object *m_containWall;//wall separating starting area from play area
-
-
+	Object *m_backSplash;//
 };
 
 #endif //TUTORIAL_PHYSICS_H

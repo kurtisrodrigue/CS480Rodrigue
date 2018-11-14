@@ -18,7 +18,6 @@ Object::Object(const char* obj, const char* tex, float siz)
 	size = siz;
 
 	LoadOBJ(obj, tex);
-	
 
 	glGenBuffers(1, &VB);
 	glBindBuffer(GL_ARRAY_BUFFER, VB);

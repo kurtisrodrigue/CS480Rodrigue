@@ -43,7 +43,6 @@ bool Graphics::Initialize(int width, int height)
     printf("Camera Failed to Initialize\n");
     return false;
   }
-
   phys_eng = new PhysicsEngine;
   phys_eng->createObjects();
 
@@ -130,14 +129,17 @@ void Graphics::Render()
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_plane->GetModel()));
   phys_eng->m_plane->Render();
 
-  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_box->GetModel()));
-  phys_eng->m_box->Render();
-
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_ball->GetModel()));
   phys_eng->m_ball->Render();
 
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_cylinder1->GetModel()));
   phys_eng->m_cylinder1->Render();
+
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_cylinder2->GetModel()));
+  phys_eng->m_cylinder2->Render();
+
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_cylinder3->GetModel()));
+  phys_eng->m_cylinder3->Render();
 
   // Get any errors from OpenGL
   auto error = glGetError();
@@ -146,6 +148,11 @@ void Graphics::Render()
     string val = ErrorString( error );
     std::cout<< "Error initializing OpenGL! " << error << ", " << val << std::endl;
   }
+}
+
+void Graphics::Launch()
+{
+  //phys_eng->Launch();
 }
 
 std::string Graphics::ErrorString(GLenum error)
