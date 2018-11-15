@@ -80,13 +80,45 @@ void Engine::Keyboard()
   {
     m_running = false;
   }
-  else if (m_event.type == SDL_KEYDOWN)
+  switch (m_event.type)
   {
     // handle key down events here
-    if (m_event.key.keysym.sym == SDLK_ESCAPE)
-    {
-      m_running = false;
-    }
+  	case SDL_KEYDOWN:
+  		switch(m_event.key.keysym.sym)
+	    {
+	    	case SDLK_ESCAPE:
+	    		m_running = false;
+	    		break;
+
+	    	case SDLK_u:
+	    		m_graphics->ambient.x += 0.05f;
+                m_graphics->ambient.y += 0.05f;
+                m_graphics->ambient.z += 0.05f;
+                break;
+
+            case SDLK_j:
+                m_graphics->ambient.x -= 0.05f;
+                m_graphics->ambient.y -= 0.05f;
+                m_graphics->ambient.z -= 0.05f;
+                break;
+
+            case SDLK_i:
+                m_graphics->specular.x += 0.05f;
+                m_graphics->specular.y += 0.05f;
+                m_graphics->specular.z += 0.05f;
+                break;
+
+            case SDLK_k:
+                m_graphics->specular.x -= 0.05f;
+                m_graphics->specular.y -= 0.05f;
+                m_graphics->specular.z -= 0.05f;
+                break;
+
+	        case SDLK_z:
+	          m_graphics->per_frag = ! m_graphics->per_frag;
+	          break;
+
+	    }
   }
 }
 

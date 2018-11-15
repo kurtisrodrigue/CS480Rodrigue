@@ -36,6 +36,7 @@ class Object
 
 	btCollisionShape *m_shape;
 	btRigidBody *m_rigidbody;
+	btVector3 scaling;
 
     float size;
 };

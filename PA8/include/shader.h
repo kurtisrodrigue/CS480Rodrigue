@@ -9,6 +9,7 @@ class Shader
 {
   public:
     Shader();
+    Shader(std::string frag, std::string vert);
     ~Shader();
     bool Initialize();
     void Enable();
@@ -19,6 +20,9 @@ class Shader
   private:
     GLuint m_shaderProg;    
     std::vector<GLuint> m_shaderObjList;
+
+    std::string m_fragmentShader;
+    std::string m_vertexShader;
 };
 
 #endif  /* SHADER_H */

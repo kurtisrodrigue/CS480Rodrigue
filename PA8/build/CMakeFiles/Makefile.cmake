@@ -27,7 +27,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/Cellar/cmake/3.12.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/usr/local/Cellar/cmake/3.12.2/share/cmake/Modules/Compiler/Clang.cmake"
   "/usr/local/Cellar/cmake/3.12.2/share/cmake/Modules/Compiler/GNU.cmake"
-  "/usr/local/Cellar/cmake/3.12.2/share/cmake/Modules/FindBULLET.cmake"
+  "/usr/local/Cellar/cmake/3.12.2/share/cmake/Modules/FindBullet.cmake"
   "/usr/local/Cellar/cmake/3.12.2/share/cmake/Modules/FindImageMagick.cmake"
   "/usr/local/Cellar/cmake/3.12.2/share/cmake/Modules/FindOpenGL.cmake"
   "/usr/local/Cellar/cmake/3.12.2/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"

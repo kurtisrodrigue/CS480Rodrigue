@@ -57,51 +57,64 @@ void PhysicsEngine::createObjects()
 	btDefaultMotionState *shapeMotionState = NULL;
 
 	shapeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1),
-															btVector3(0, 0, 0)));
-	btScalar mass(0);
+															btVector3(0, -10, 0)));
+	btScalar mass(1);
 	btVector3 inertia(1, 1, 1);
 	m_board->m_shape->calculateLocalInertia(mass, inertia);
 	btRigidBody::btRigidBodyConstructionInfo shapeRigidBodyCI(mass, shapeMotionState, m_board->m_shape, inertia);
 	m_board->m_rigidbody = new btRigidBody(shapeRigidBodyCI);
-	m_dynamicsWorld->addRigidBody(m_board->m_rigidbody, 1 , 1);
+	m_dynamicsWorld->addRigidBody(m_board->m_rigidbody, 2 , 6);
 	m_board->m_rigidbody->setGravity(btVector3(0,0,0));
+	m_board->m_shape->setLocalScaling(m_board->scaling);
 
+	 //PLANE? --------------------------------------------------------
+	m_plane = new Object();
+	m_plane->m_physics = this;
+	m_plane->m_shape = new btStaticPlaneShape(btVector3(0,1,0), 1);
+	shapeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1),
+	                                                        btVector3(0, 0, 0)));
+	m_plane->m_shape->calculateLocalInertia(mass, inertia);
+	btRigidBody::btRigidBodyConstructionInfo shapeRigidBodyCI3(mass, shapeMotionState, m_plane->m_shape, inertia);
+	m_plane->m_rigidbody = new btRigidBody(shapeRigidBodyCI3);
+	m_dynamicsWorld->addRigidBody(m_plane->m_rigidbody, 2 , 6);
 
 	// BOX -----------------------------------------------------------
-	m_box = new Object("../assets/box.obj" , "../assets/woodtex.jpeg",0.5f);
+	m_box = new Object("../assets/box.obj" , "../assets/woodtex.jpeg",1.0f);
 	m_box->m_physics = this;
-	m_box->m_shape = new btBoxShape(btVector3(0,3,0));
+	m_box->m_shape = new btBoxShape(btVector3(0,0,0));
 	shapeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1),
-	                                                        btVector3(0, 3, 0)));
-	mass = 0;
+	                                                        btVector3(0, 15, 0)));
+	mass = 1;
 	m_box->m_shape->calculateLocalInertia(mass, inertia);
-	btRigidBody::btRigidBodyConstructionInfo shapeRigidBodyCI3(mass, shapeMotionState, m_box->m_shape, inertia);
-	m_box->m_rigidbody = new btRigidBody(shapeRigidBodyCI3);
-	m_dynamicsWorld->addRigidBody(m_box->m_rigidbody, 1 , 1);
+	btRigidBody::btRigidBodyConstructionInfo shapeRigidBodyCI5(mass, shapeMotionState, m_box->m_shape, inertia);
+	m_box->m_rigidbody = new btRigidBody(shapeRigidBodyCI5);
+	m_dynamicsWorld->addRigidBody(m_box->m_rigidbody, 2 , 6);
+	m_box->m_shape->setLocalScaling(m_box->scaling);
 
 	// BALL -----------------------------------------------------------
-	m_ball = new Object("../assets/sphere.obj" , "../assets/metal.jpg",0.2f);
+	m_ball = new Object("../assets/sphere.obj" , "../assets/metal.jpg",1.0f);
 	m_ball->m_physics = this;
 	m_ball->m_shape = new btBoxShape(btVector3(0,3,0));
 	shapeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1),
-	                                                        btVector3(3, 3, 0)));
+	                                                        btVector3(0, 5, 0)));
 	mass = 1;
 	m_ball->m_shape->calculateLocalInertia(mass, inertia);
 	btRigidBody::btRigidBodyConstructionInfo shapeRigidBodyCI2(mass, shapeMotionState, m_ball->m_shape, inertia);
 	m_ball->m_rigidbody = new btRigidBody(shapeRigidBodyCI2);
-	m_dynamicsWorld->addRigidBody(m_ball->m_rigidbody, 1 , 1);
+	m_dynamicsWorld->addRigidBody(m_ball->m_rigidbody, 0 , 0);
+	m_ball->m_rigidbody->setGravity(btVector3(0,0,0));
 
 	// Cylinder -----------------------------------------------------------
-	m_cylinder = new Object("../assets/cylinder.obj" , "../assets/woodtex.jpeg",0.5f);
+	m_cylinder = new Object("../assets/cylinder.obj" , "../assets/woodtex.jpeg",1.0f);
 	m_cylinder->m_physics = this;
 	m_cylinder->m_shape = new btCylinderShape(btVector3(0,3,0));
 	shapeMotionState = new btDefaultMotionState(btTransform(btQuaternion(0, 0, 0, 1),
-	                                                        btVector3(-3, 3, 0)));
+	                                                        btVector3(-3, 10, 0)));
 	mass = 0;
 	m_cylinder->m_shape->calculateLocalInertia(mass, inertia);
 	btRigidBody::btRigidBodyConstructionInfo shapeRigidBodyCI4(mass, shapeMotionState, m_cylinder->m_shape, inertia);
 	m_cylinder->m_rigidbody = new btRigidBody(shapeRigidBodyCI4);
-	m_dynamicsWorld->addRigidBody(m_cylinder->m_rigidbody, 1 , 1);
+	m_dynamicsWorld->addRigidBody(m_cylinder->m_rigidbody, 0 , 0);
 
 
 }

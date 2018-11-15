@@ -14,6 +14,7 @@ Object::Object()
 
 Object::Object(const char* obj, const char* tex, float siz)
 {
+	scaling = btVector3(siz,siz,siz);
 	size = siz;
 
 	LoadOBJ(obj, tex);
@@ -42,8 +43,6 @@ void Object::Update(unsigned int dt)
 	trans.getOpenGLMatrix(m);
 	model = glm::make_mat4(m);
 	Scale();
-
-
 }
 
 void Object::Scale()
@@ -61,11 +60,13 @@ void Object::Render()
 	glEnableVertexAttribArray(0);
 	glEnableVertexAttribArray(1);
 	glEnableVertexAttribArray(2);
+	glEnableVertexAttribArray(3);
 
 	glBindBuffer(GL_ARRAY_BUFFER, VB);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex,color));
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex,Texture));
+	glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex,normal));
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IB);
 
 	glActiveTexture(GL_TEXTURE0);
@@ -75,6 +76,7 @@ void Object::Render()
 	glDisableVertexAttribArray(0);
 	glDisableVertexAttribArray(1);
 	glDisableVertexAttribArray(2);
+	glDisableVertexAttribArray(3);
 }
 
 
@@ -98,8 +100,12 @@ void Object::LoadOBJ(const char* obj, const char* tex)
 				                          -m_aiscene->mMeshes[i]->mTextureCoords[0][j].y);
 			}
 
+			glm::vec3 temp_norms(float(m_aiscene->mMeshes[i]->mNormals[j].x),
+			                     float(m_aiscene->mMeshes[i]->mNormals[j].y),
+			                     float(m_aiscene->mMeshes[i]->mNormals[j].z));
 
-			Vertices.push_back(Vertex(temp_vertex, temp_vertex,temp_textures));
+
+			Vertices.push_back(Vertex(temp_vertex, temp_vertex,temp_textures, temp_norms));
 		}
 
 

@@ -37,6 +37,8 @@ shader.h
 ../include/shader.h
 object.h
 ../include/object.h
+vector
+-
 
 ../include/graphics_headers.h
 iostream
@@ -92,14 +94,6 @@ SDL2/SDL.h
 string
 -
 
-/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/Physics.cpp
-Physics.h
-/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/Physics.h
-
-/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/camera.cpp
-camera.h
-/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/camera.h
-
 /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/engine.cpp
 engine.h
 /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/engine.h
@@ -113,18 +107,6 @@ iostream
 -
 engine.h
 /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/engine.h
-
-/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/object.cpp
-object.h
-/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/object.h
-
-/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/shader.cpp
-shader.h
-/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/shader.h
-
-/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA8/src/window.cpp
-window.h
--
 
 /usr/local/Cellar/imagemagick/7.0.8-12/include/ImageMagick-7/Magick++.h
 Magick++/Include.h
@@ -1579,10 +1561,6 @@ assimp/types.h
 -
 assimp/quaternion.h
 -
-
-/usr/local/include/assimp/camera.h
-types.h
-/usr/local/include/assimp/types.h
 
 /usr/local/include/assimp/color4.h
 defs.h

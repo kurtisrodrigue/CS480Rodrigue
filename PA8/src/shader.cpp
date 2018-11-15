@@ -5,6 +5,13 @@ Shader::Shader()
   m_shaderProg = 0;
 }
 
+Shader::Shader(std::string frag, std::string vert)
+{
+	m_shaderProg = 0;
+	m_fragmentShader = frag;
+	m_vertexShader = vert;
+}
+
 Shader::~Shader()
 {
   for (std::vector<GLuint>::iterator it = m_shaderObjList.begin() ; it != m_shaderObjList.end() ; it++)
@@ -43,11 +50,11 @@ bool Shader::AddShader(GLenum ShaderType)
     std::ifstream filein;
     if(ShaderType == GL_VERTEX_SHADER)
     {
-       filein.open("../shaders/shader.vert");
+       filein.open(m_vertexShader.c_str());
     }
     else if(ShaderType == GL_FRAGMENT_SHADER)
     {
-       filein.open("../shaders/shader.frag");
+       filein.open(m_fragmentShader.c_str());
     }
 
     filein >> s;
