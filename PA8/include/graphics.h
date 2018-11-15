@@ -18,6 +18,7 @@ class Graphics
     bool Initialize(int width, int height);
     void Update(unsigned int dt);
     void Render();
+    void Launch();
 
 	glm::vec4 ambient;
 	glm::vec4 diffuse;

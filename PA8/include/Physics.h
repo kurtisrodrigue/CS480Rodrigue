@@ -18,16 +18,29 @@ public:
 
 	// functions
 	void createObjects();
+	void adjustGravity(float x,float y,float z);
 	void Update(unsigned int dt);
 
+	void Render();
+	void Launch();
+
 	// objects
-	Object *m_board; // using triangle meshes
 	Object *m_ball; // basic sphere
 	Object *m_box; // basic box
-	Object *m_cylinder; // basic cylinder
+	Object *m_paddle_1;//paddle
+	Object *m_paddle_2;//paddle
+	Object *m_spring;//spring
+	Object *m_cylinder1; // basic cylinder
+	Object *m_cylinder2; // basic cylinder
+	Object *m_cylinder3; // basic cylinder
 	Object *m_plane; // basic plane to stop the ball from leaving the board
-
-
+	Object *m_topWall; // part of surrounding wall
+	Object *m_bottomWall;// part of surrounding wall
+	Object *m_backBoard; // part of surrounding wall
+	Object *m_deadWall;//part of surrounding wall
+	Object *m_ricochetWall;//part of surrounding wall
+	Object *m_containWall;//wall separating starting area from play area
+	Object *m_backSplash;//
 };
 
 #endif //TUTORIAL_PHYSICS_H

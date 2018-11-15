@@ -34,7 +34,6 @@ bool Engine::Initialize()
     printf("The window failed to initialize.\n");
     return false;
   }
-
   // Start the graphics
   m_graphics = new Graphics();
   if(!m_graphics->Initialize(m_WINDOW_WIDTH, m_WINDOW_HEIGHT))
@@ -45,7 +44,6 @@ bool Engine::Initialize()
 
   // Set the time
   m_currentTimeMillis = GetCurrentTimeMillis();
-
   // No errors
   return true;
 }
