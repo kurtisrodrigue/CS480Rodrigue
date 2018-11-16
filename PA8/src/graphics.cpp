@@ -2,7 +2,6 @@
 
 Graphics::Graphics()
 {
-  light = glm::vec4(0,10,0,1);
 
   ambient = glm::vec4(0.3f, 0.3f, 0.1f, 1);
   specular = glm::vec4(0.3f, 0.3f, 0.1f, 1);
@@ -152,6 +151,10 @@ void Graphics::Render()
   //clear the screen
   glClearColor(0.0, 0.0, 0.2, 1.0);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	glm::mat4 temp = m_camera->GetView();
+	//light == camera position
+	light = glm::vec4(temp[0][3], temp[1][3], temp[1][3], 1.0f);
 
   // Start the correct program
   m_shader[per_frag]->Enable();
