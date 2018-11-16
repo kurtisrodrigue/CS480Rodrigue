@@ -144,6 +144,11 @@ void Graphics::Update(unsigned int dt)
 {
   // Update the object
   phys_eng->Update(dt);
+  if( isZoomOut == 'b' )
+    m_camera->Zoom(0);
+  if( isZoomOut == 'c' )
+    m_camera->Zoom(1);
+  isZoomOut = 'a';
 }
 
 void Graphics::Render()
@@ -169,6 +174,9 @@ void Graphics::Render()
   // Render the objects
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_plane->GetModel()));
   phys_eng->m_plane->Render();
+  
+  glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_backSplash->GetModel()));
+  phys_eng->m_backSplash->Render();
 
   glUniformMatrix4fv(m_modelMatrix, 1, GL_FALSE, glm::value_ptr(phys_eng->m_ball->GetModel()));
   phys_eng->m_ball->Render();
@@ -241,4 +249,3 @@ std::string Graphics::ErrorString(GLenum error)
     return "None";
   }
 }
-
