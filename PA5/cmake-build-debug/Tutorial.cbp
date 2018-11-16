@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Tutorial"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\CMakeModules\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tutorial_SUCCESSFUL">
+				<Option working_dir="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tutorial_SUCCESSFUL"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tutorial">
+				<Option output="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Tutorial" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DUNIX"/>
+					<Add directory="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/include"/>
+					<Add directory="/usr/local/include/SDL2"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tutorial"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tutorial/fast">
+				<Option output="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Tutorial" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DUNIX"/>
+					<Add directory="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/include"/>
+					<Add directory="/usr/local/include/SDL2"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tutorial/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/src/camera.cpp">
+			<Option target="Tutorial"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/src/engine.cpp">
+			<Option target="Tutorial"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/src/graphics.cpp">
+			<Option target="Tutorial"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/src/main.cpp">
+			<Option target="Tutorial"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/src/object.cpp">
+			<Option target="Tutorial"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/src/shader.cpp">
+			<Option target="Tutorial"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/src/window.cpp">
+			<Option target="Tutorial"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/CMakeModules/FindGLEW.cmake">
+			<Option virtualFolder="CMake Files\CMakeModules\"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/CMakeModules/FindGLM.cmake">
+			<Option virtualFolder="CMake Files\CMakeModules\"/>
+		</Unit>
+		<Unit filename="/Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA5/CMakeModules/FindSDL2.cmake">
+			<Option virtualFolder="CMake Files\CMakeModules\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

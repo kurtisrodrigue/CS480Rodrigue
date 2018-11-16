@@ -1,0 +1,4 @@
+/home/kc/Documents/CS480/CS480Rodrigue/PA2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kc/Documents/CS480/CS480Rodrigue/PA2/cmake-build-debug/CMakeFiles/Tutorial_SUCCESSFUL.dir
+/home/kc/Documents/CS480/CS480Rodrigue/PA2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/kc/Documents/CS480/CS480Rodrigue/PA2/cmake-build-debug/CMakeFiles/Tutorial.dir

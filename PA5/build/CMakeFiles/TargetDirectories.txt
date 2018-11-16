@@ -1,0 +1,4 @@
+/home/tmccrone/Desktop/cs480McCrone/KurtisGitHub/CS480Rodrigue/PA5/build/CMakeFiles/edit_cache.dir
+/home/tmccrone/Desktop/cs480McCrone/KurtisGitHub/CS480Rodrigue/PA5/build/CMakeFiles/Tutorial_SUCCESSFUL.dir
+/home/tmccrone/Desktop/cs480McCrone/KurtisGitHub/CS480Rodrigue/PA5/build/CMakeFiles/rebuild_cache.dir
+/home/tmccrone/Desktop/cs480McCrone/KurtisGitHub/CS480Rodrigue/PA5/build/CMakeFiles/Tutorial.dir
