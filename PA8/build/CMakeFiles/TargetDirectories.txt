@@ -1,0 +1,4 @@
+/home/tmccrone/Desktop/cs480McCrone/KurtisGitHub/CS480Rodrigue/PA8/build/CMakeFiles/rebuild_cache.dir
+/home/tmccrone/Desktop/cs480McCrone/KurtisGitHub/CS480Rodrigue/PA8/build/CMakeFiles/Bullet_SUCCESSFUL.dir
+/home/tmccrone/Desktop/cs480McCrone/KurtisGitHub/CS480Rodrigue/PA8/build/CMakeFiles/edit_cache.dir
+/home/tmccrone/Desktop/cs480McCrone/KurtisGitHub/CS480Rodrigue/PA8/build/CMakeFiles/Bullet.dir
