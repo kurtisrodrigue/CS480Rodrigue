@@ -155,6 +155,11 @@ void Graphics::Update(unsigned int dt)
 
 }
 
+void Graphics::Zoom(bool isZoomOut)
+{
+  m_camera->Zoom(isZoomOut);
+}
+
 void Graphics::Render()
 {
   //clear the screen

@@ -26,9 +26,11 @@ class Graphics
 	glm::vec4 light;
 	float shininess;
 	bool per_frag;
+        char isZoomOut;
 
 
 private:
+    
     std::string ErrorString(GLenum error);
 
     Camera *m_camera;

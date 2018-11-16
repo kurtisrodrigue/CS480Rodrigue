@@ -11,10 +11,12 @@ class Camera
     bool Initialize(int w, int h);
     glm::mat4 GetProjection();
     glm::mat4 GetView();
+    void Zoom(bool isZoomOut);
   
   private:
     glm::mat4 projection;
     glm::mat4 view;
+    glm::vec3 eyePos;
 };
 
 #endif /* CAMERA_H */

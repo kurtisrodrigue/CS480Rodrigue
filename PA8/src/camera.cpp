@@ -16,7 +16,8 @@ bool Camera::Initialize(int w, int h)
   //  if you will be having a moving camera the view matrix will need to more dynamic
   //  ...Like you should update it before you render more dynamic 
   //  for this project having them static will be fine
-  view = glm::lookAt( glm::vec3(0.0, 20.0, 3.0), //Eye Position
+  eyePos = glm::vec3(4.0, 10.0, 0.0);
+  view = glm::lookAt( eyePos, //Eye Position
                       glm::vec3(0.0, 0.0, 0.0), //Focus point
                       glm::vec3(0.0, 1.0, 0.0)); //Positive Y is up
 
@@ -37,4 +38,22 @@ glm::mat4 Camera::GetView()
   return view;
 }
 
+void Camera::Zoom(bool isZoomOut)
+{
+  if(isZoomOut)
+  {
+    eyePos = eyePos + glm::vec3(0.0, 1.0, 0.0);
+  }
+  else
+  {
+    if( eyePos.y > 10 )
+    {
+      eyePos = eyePos - glm::vec3(0.0, 1.0, 0.0);
+    }
+  }
+
+  view = glm::lookAt( eyePos, //Eye Position
+                      glm::vec3(0.0, 0.0, 0.0), //Focus point
+                      glm::vec3(0.0, 1.0, 0.0)); //Positive Y is up
+}
 

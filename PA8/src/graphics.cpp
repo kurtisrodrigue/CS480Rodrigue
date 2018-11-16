@@ -145,6 +145,11 @@ void Graphics::Update(unsigned int dt)
 {
   // Update the object
   phys_eng->Update(dt);
+  if( isZoomOut == 'b' )
+    m_camera->Zoom(0);
+  if( isZoomOut == 'c' )
+    m_camera->Zoom(1);
+  isZoomOut = 'a';
 }
 
 void Graphics::Render()

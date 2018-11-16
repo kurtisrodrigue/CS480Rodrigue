@@ -81,6 +81,7 @@ void Engine::Keyboard()
   switch (m_event.type)
   {
     // handle key down events here
+    
   	case SDL_KEYDOWN:
   		switch(m_event.key.keysym.sym)
 	    {
@@ -116,6 +117,13 @@ void Engine::Keyboard()
 	          m_graphics->per_frag = ! m_graphics->per_frag;
 	          break;
 
+		case SDLK_w:
+		m_graphics->isZoomOut = 'b';//zoom in
+		  break;
+
+		case SDLK_s:
+                m_graphics->isZoomOut = 'c';//zoom out
+		  break;
 	    }
   }
 }
