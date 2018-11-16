@@ -1,8 +1,0 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7
-<FindSDL2.cmake>
-</FindSDL2.cmake>
--- Found ImageMagick: /usr/local/bin/convert (found version "7.0.8-12") 
--- Found ImageMagick: /usr/local/Cellar/imagemagick/7.0.8-12/lib/libMagick++-7.Q16HDRI.dylib (found version "7.0.8-12") 
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/kcrodrigue/Documents/CS480/CS480Rodrigue/PA7/cmake-build-debug
